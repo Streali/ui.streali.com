@@ -76,6 +76,15 @@ export default {
       "fontFamily": {
         "sans": "Satoshi",
       },
+      "fontSize": {
+        "xs": "0.625rem",
+        "sm": "0.75rem",
+        "base": "0.875rem",
+        "lg": "1rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.75rem"
+      },
     },
   },
   plugins: [],

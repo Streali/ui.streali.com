@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// Fonts
+@import 'https://api.fontshare.com/v2/css?f[]=satoshi@700,701,401,400,500,501&display=swap';
+@import 'remixicon/fonts/remixicon.css';
+
+body {
+  background-color: theme('colors.grey.500');
+  color: theme('colors.white');
+  font-family: theme('fontFamily.sans');
+  font-size: theme('fontSize.base');
+}

@@ -5542,6 +5542,11 @@ remark-slug@^6.0.0:
     mdast-util-to-string "^1.0.0"
     unist-util-visit "^2.0.0"
 
+remixicon@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/remixicon/-/remixicon-3.1.1.tgz#968dbc8245505428c3da2748d05849f4a031eebb"
+  integrity sha512-LOlsnVeZwLWB7iePs8pICJcEQ7iSVAOYsahqYTCIQsfZMnxB6Meu867EZxGLO2c3ZG9Xpp7fGU+2icLwyWHbcw==
+
 require-directory@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
