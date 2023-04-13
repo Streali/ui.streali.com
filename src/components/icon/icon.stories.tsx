@@ -26,5 +26,7 @@ type Story = StoryObj<typeof Icon>;
 export const Default: Story = {
   args: {
     name: 'home-2-line',
+    spin: false,
+    className: '',
   },
 };
