@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Icon from '../icon/icon';
 import type { ComponentPropsWithoutRef } from 'react';
 
@@ -59,7 +60,11 @@ function Button(props: ButtonProps) {
   } ${defineSizeClassName[size]} ${rest.disabled && defineDisableClassName} ${rest.className}`;
 
   if (link && !external) {
-    return <p className={defineClassName}>{content}</p>;
+    return (
+      <Link to={link} className={defineClassName}>
+        {content}
+      </Link>
+    );
   }
 
   if (link && external) {
