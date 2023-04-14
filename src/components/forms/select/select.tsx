@@ -24,6 +24,7 @@ interface SelectProps {
   placeholder?: string;
   onChange?: (newValue: unknown, actionMeta: ActionMeta<unknown>) => void;
   iconLeft?: string;
+  disabled?: boolean;
 }
 
 export default function Select(props: SelectProps) {
@@ -36,6 +37,7 @@ export default function Select(props: SelectProps) {
     placeholder = '',
     onChange,
     iconLeft,
+    disabled = false,
   } = props;
 
   return (
@@ -50,6 +52,7 @@ export default function Select(props: SelectProps) {
         isMulti={isMulti}
         placeholder={placeholder}
         onChange={onChange}
+        isDisabled={disabled}
         components={{
           Control: ({ ...props }) => (
             <>
@@ -84,13 +87,16 @@ interface SelectControlProps extends ControlProps {
 const SelectControl = ({ children, ...props }: SelectControlProps) => {
   const defineFocusClassName = '!border-primary-500 !shadow-outline';
   const defineErrorClassName = '!border-error-500';
+  const defineDisabledClassName = '!bg-grey-400 !cursor-not-allowed';
 
   return (
     <>
       <components.Control
         className={`!bg-grey-600 border !min-h-fit ${props.isFocused ? defineFocusClassName : ''} ${
           props.isMulti && '!max-h-fit'
-        } ${props.errorMessage ? defineErrorClassName : '!border-grey-400'}`}
+        } ${props.errorMessage ? defineErrorClassName : '!border-grey-400'} ${
+          props.isDisabled ? defineDisabledClassName : ''
+        }`}
         {...props}>
         {props.iconLeft && (
           <Icon name={props.iconLeft} className={`ml-3 ${props.isMulti && 'mr-1'}`} />

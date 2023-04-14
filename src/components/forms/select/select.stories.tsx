@@ -22,6 +22,7 @@ export const Default: Story = {
     isMulti: false,
     placeholder: 'Select placeholder',
     iconLeft: 'home-2-line',
+    disabled: false,
   },
 };
 
@@ -37,5 +38,6 @@ export const Multi: Story = {
     isMulti: true,
     placeholder: 'Select placeholder',
     iconLeft: 'home-2-line',
+    disabled: false,
   },
 };
