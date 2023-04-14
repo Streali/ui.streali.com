@@ -85,6 +85,9 @@ export default {
         "2xl": "1.5rem",
         "3xl": "1.75rem"
       },
+      "boxShadow": {
+        "outline": "0 0 8px 0 rgba(81, 41, 240, 0.4)",
+      }
     },
   },
   plugins: [],
