@@ -25,5 +25,6 @@ export const Default: Story = {
     disabled: false,
     defaultValue: 'Input value',
     type: 'normal',
+    errorMessage: 'ok',
   },
 };
