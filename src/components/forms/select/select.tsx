@@ -123,7 +123,7 @@ const SelectIndicatorSeparator = () => {
 const SelectIndicatorContainer = (props: IndicatorsContainerProps) => {
   return (
     <components.IndicatorsContainer
-      className="w-8 h-8 flex justify-center items-center text-lg !self-center"
+      className="w-10 h-10 flex justify-center items-center text-lg !self-center"
       {...props}>
       <Icon name="arrow-down-s-line" />
     </components.IndicatorsContainer>
@@ -133,7 +133,7 @@ const SelectIndicatorContainer = (props: IndicatorsContainerProps) => {
 const SelectValueContainer = (props: ValueContainerProps) => {
   return (
     <components.ValueContainer
-      className={`!min-h-8 !p-0 !pl-3 max-h-6 gap-1  ${
+      className={`!min-h-10 !p-0 !pl-3 max-h-6 gap-1  ${
         props.isMulti ? '!pl-1 !pt-2 !pb-1 !min-h-fit !max-h-fit !-mt-1' : '!mt-0'
       }`}
       {...props}>

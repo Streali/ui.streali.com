@@ -8,16 +8,16 @@ interface InputProps extends ComponentPropsWithoutRef<'input'> {
   containerClassName?: string;
   iconLeft?: string;
   suffix?: string;
-  type?: 'normal' | 'small' | 'large';
+  shape?: 'normal' | 'small' | 'large';
   errorMessage?: string;
 }
 
 const defineFocusClassName = 'border-primary-500 shadow-outline';
 const defineDisabledClassName = 'bg-grey-400 text-grey-100';
-const defineTypeClassName = {
-  normal: 'h-8',
-  small: 'h-6 text-sm',
-  large: 'h-10',
+const defineShapeClassName = {
+  normal: 'h-10',
+  small: 'h-8 text-sm',
+  large: 'h-12',
 };
 const defineErrorClassName = 'border-error-500';
 
@@ -28,7 +28,7 @@ export default function Input(props: InputProps) {
     containerClassName = '',
     iconLeft,
     suffix,
-    type = 'normal',
+    shape = 'normal',
     errorMessage,
     ...rest
   } = props;
@@ -43,14 +43,16 @@ export default function Input(props: InputProps) {
       )}
 
       <div
-        className={`w-full flex h-8 rounded bg-grey-600 border border-grey-400 items-center gap-2 px-3 transition-all duration-200 ${
-          defineTypeClassName[type]
+        className={`w-full flex h-10 rounded bg-grey-600 border border-grey-400 items-center gap-2 px-3 transition-all duration-200 ${
+          defineShapeClassName[shape]
         } ${isFocus && defineFocusClassName} ${rest.disabled && defineDisabledClassName} ${
           errorMessage && defineErrorClassName
         } ${containerClassName}`}>
         {iconLeft && <Icon name={iconLeft} className="-mt-0.5" />}
         <input
-          className="placeholder:text-grey-300 font-sans bg-transparent flex-1 h-full outline-none -mt-0.5"
+          className={`placeholder:text-grey-300 font-sans bg-transparent flex-1 h-full outline-none -mt-0.5 appearance-none ${
+            suffix ? 'max-w-[calc(100%_-_20px)]' : 'max-w-full'
+          }`}
           onBlur={() => setIsFocus(false)}
           onFocus={() => setIsFocus(true)}
           {...rest}
