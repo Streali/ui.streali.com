@@ -1,7 +1,7 @@
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import Text from '../../text/text';
-import Input from '../input/input';
-import { useCallback, useEffect, useState } from 'react';
+import { Input } from '../input/input';
+import { useEffect, useState } from 'react';
 
 interface SliderProps {
   value: number;

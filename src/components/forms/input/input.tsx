@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, useState } from 'react';
+import { ComponentPropsWithoutRef, RefObject, forwardRef, useState } from 'react';
 import Text from '../../text/text';
 import Icon from '../../icon/icon';
 
@@ -21,7 +21,7 @@ const defineShapeClassName = {
 };
 const defineErrorClassName = 'border-error-500';
 
-export default function Input(props: InputProps) {
+export const Input = forwardRef((props: InputProps, ref) => {
   const {
     label,
     labelClassName = '',
@@ -53,9 +53,16 @@ export default function Input(props: InputProps) {
           className={`placeholder:text-grey-300 font-sans bg-transparent flex-1 h-full outline-none -mt-0.5 appearance-none ${
             suffix ? 'max-w-[calc(100%_-_20px)]' : 'max-w-full'
           }`}
-          onBlur={() => setIsFocus(false)}
-          onFocus={() => setIsFocus(true)}
+          ref={ref as RefObject<HTMLInputElement>}
           {...rest}
+          onBlur={(e) => {
+            rest.onBlur?.(e);
+            setIsFocus(false);
+          }}
+          onFocus={(e) => {
+            setIsFocus(true);
+            rest.onFocus?.(e);
+          }}
         />
         {suffix && (
           <Text className="text-grey-200 flex items-center leading-none -mt-0.5">{suffix}</Text>
@@ -68,4 +75,4 @@ export default function Input(props: InputProps) {
       )}
     </>
   );
-}
+});
