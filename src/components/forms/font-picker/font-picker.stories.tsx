@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import FontPicker from './font-picker';
 
 const meta: Meta<typeof FontPicker> = {
-  title: 'Forms/Font Picker',
+  title: 'Editor/Font Picker',
   component: FontPicker,
 };
 
