@@ -1,0 +1,20 @@
+.w-color-editable-input {
+  input {
+    width: 100%;
+    height: theme('spacing.6');
+    border-radius: theme('borderRadius.sm');
+    background: theme('colors.grey.700');
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: theme('colors.grey.400') !important;
+    box-shadow: none !important;
+    font-family: theme('fontFamily.sans');
+    outline: none;
+    padding: 0 theme('spacing.2') !important;
+    transition: border 0.2s ease-in-out;
+
+    &:focus {
+      border-color: theme('colors.primary.500') !important;
+    }
+  }
+}

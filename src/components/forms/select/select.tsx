@@ -8,6 +8,7 @@ import ReactSelect, {
   MultiValueProps,
   OptionProps,
   PlaceholderProps,
+  PropsValue,
   SingleValueProps,
   ValueContainerProps,
   components,
@@ -25,6 +26,8 @@ interface SelectProps {
   onChange?: (newValue: unknown, actionMeta: ActionMeta<unknown>) => void;
   iconLeft?: string;
   disabled?: boolean;
+  className?: string;
+  defaultValue?: { label: string; value: string };
 }
 
 export default function Select(props: SelectProps) {
@@ -38,10 +41,12 @@ export default function Select(props: SelectProps) {
     onChange,
     iconLeft,
     disabled = false,
+    className = '',
+    defaultValue,
   } = props;
 
   return (
-    <>
+    <div className={className}>
       {label && (
         <Text className={`mb-2 block w-full ${labelClassName}`} type="medium">
           {label}
@@ -49,6 +54,7 @@ export default function Select(props: SelectProps) {
       )}
       <ReactSelect
         options={options}
+        value={defaultValue as unknown}
         isMulti={isMulti}
         placeholder={placeholder}
         onChange={onChange}
@@ -75,7 +81,7 @@ export default function Select(props: SelectProps) {
           MultiValue: SelectMultiValue,
         }}
       />
-    </>
+    </div>
   );
 }
 

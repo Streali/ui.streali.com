@@ -3,7 +3,7 @@ import { Input } from '../input/input';
 import * as Portal from '@radix-ui/react-portal';
 import Text from '../../text/text';
 import Icon, { IconSVG } from '../../icon/icon';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from '../../../hooks/use-click-outside';
 
 type Font = {
@@ -38,14 +38,13 @@ const listAnimation = {
     },
   },
   out: {
-    x: '0px',
-    y: '50px',
+    x: 0,
+    y: 10,
     opacity: 0,
     transition: {
       duration: 0.3,
       stiffness: 100,
       ease: 'easeInOut',
-      type: 'spring',
     },
   },
 };
@@ -89,41 +88,43 @@ export default function FontPicker(props: FontPickerProps) {
           setVal(e.target.value);
         }}
       />
-      {isOpen && (
-        <Portal.Root>
-          <motion.div
-            variants={listAnimation}
-            initial="initial"
-            animate="in"
-            exit="out"
-            className={`w-full bg-grey-700 border border-grey-400 mt-3 rounded ${
-              filteredFonts.length > 0
-                ? 'grid grid-cols-3 gap-3 p-3'
-                : 'flex justify-center items-center p-10'
-            }`}>
-            {filteredFonts.length > 0 ? (
-              <>
-                {filteredFonts.map((font, index) => (
-                  <FontCard
-                    family={font.family}
-                    from={font.from}
-                    key={index}
-                    onClick={() => {
-                      onChange(font);
-                      setVal(font.family);
-                      setIsOpen(false);
-                    }}
-                  />
-                ))}
-              </>
-            ) : (
-              <div className="w-full text-center">
-                <Text type="medium">No font found</Text>
-              </div>
-            )}
-          </motion.div>
-        </Portal.Root>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <Portal.Root>
+            <motion.div
+              variants={listAnimation}
+              initial="initial"
+              animate="in"
+              exit="out"
+              className={`w-full bg-grey-700 border border-grey-400 mt-3 rounded ${
+                filteredFonts.length > 0
+                  ? 'grid grid-cols-3 gap-3 p-3'
+                  : 'flex justify-center items-center p-10'
+              }`}>
+              {filteredFonts.length > 0 ? (
+                <>
+                  {filteredFonts.map((font, index) => (
+                    <FontCard
+                      family={font.family}
+                      from={font.from}
+                      key={index}
+                      onClick={() => {
+                        onChange(font);
+                        setVal(font.family);
+                        setIsOpen(false);
+                      }}
+                    />
+                  ))}
+                </>
+              ) : (
+                <div className="w-full text-center">
+                  <Text type="medium">No font found</Text>
+                </div>
+              )}
+            </motion.div>
+          </Portal.Root>
+        )}
+      </AnimatePresence>
     </>
   );
 }

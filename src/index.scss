@@ -29,3 +29,10 @@ body {
     -moz-appearance: textfield;
   }
 }
+
+// Color picker
+.w-color-alpha-fill {
+  width: 8px !important;
+  height: 8px !important;
+  transform: translate(-4px, 0px) !important;
+}
