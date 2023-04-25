@@ -7,7 +7,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   color?: 'primary' | 'secondary' | 'error' | 'transparent' | 'warning' | 'success' | 'stroke';
   link?: string;
   external?: boolean;
-  size: 'normal' | 'small';
+  size?: 'normal' | 'small';
   loading?: boolean;
   iconLeft?: string;
   iconRight?: string;
@@ -29,7 +29,7 @@ const defineColorClassName = {
 const defineDisableClassName = `bg-grey-100 text-grey-400 hover:bg-grey-100 focus-visible:bg-grey-400 outline-grey-100 cursor-not-allowed`;
 
 const defineSizeClassName = {
-  normal: 'h-8 px-2',
+  normal: 'h-10 px-3',
   small: 'h-5 px-2.5 text-sm rounded-full',
 };
 
@@ -55,7 +55,7 @@ function Button(props: ButtonProps) {
     </>
   );
 
-  const defineClassName = `rounded inline-flex justify-center gap-2 items-center transition-color duration-200 focus-visible:outline-1 focus-visible:outline focus-visible:outline-offset-2 ${
+  const defineClassName = `!cursor-pointer rounded inline-flex justify-center gap-2 items-center transition-color duration-200 focus-visible:outline-1 focus-visible:outline focus-visible:outline-offset-2 ${
     defineColorClassName[color]
   } ${defineSizeClassName[size]} ${rest.disabled && defineDisableClassName} ${rest.className}`;
 
