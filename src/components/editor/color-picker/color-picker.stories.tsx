@@ -14,5 +14,6 @@ export const Default: Story = {
     value: '#ffffff',
     haveInput: true,
     errorMessage: 'Error message',
+    label: 'Color',
   },
 };

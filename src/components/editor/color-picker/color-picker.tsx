@@ -1,5 +1,5 @@
 import { RefObject, forwardRef, useEffect, useRef, useState } from 'react';
-import { Input } from '../input/input';
+import { Input } from '../../forms/input/input';
 import { Alpha, EditableInputHSLA, EditableInputRGBA, Hue, Saturation } from '@uiw/react-color';
 import { hexToHsva, hsvaToHex, hsvaToHexa } from '@uiw/color-convert';
 import EditableInput from '@uiw/react-color-editable-input';
@@ -42,10 +42,12 @@ interface ColorPickerProps {
   haveInput?: boolean;
   onChange?: (color: string) => void;
   errorMessage?: string;
+  label?: string;
+  labelClassName?: string;
 }
 
 export function ColorPicker(props: ColorPickerProps) {
-  const { value, haveInput = false, onChange, errorMessage } = props;
+  const { value, haveInput = false, onChange, errorMessage, label, labelClassName } = props;
   const [val, setVal] = useState<string>(value || '#fff');
   const [hsva, setHsva] = useState(value ? hexToHsva(value) : { h: 0, s: 0, v: 0, a: 1 });
   const [isPickerOpen, setIsPickerOpen] = useState(false);
@@ -68,6 +70,11 @@ export function ColorPicker(props: ColorPickerProps) {
 
   return (
     <div>
+      {label && (
+        <Text className={`mb-2 block w-full ${labelClassName}`} type="medium">
+          {label}
+        </Text>
+      )}
       <div className="flex gap-2 items-center">
         <div
           className="h-10 w-10 rounded border cursor-pointer border-grey-400 bg-grey-700 flex justify-center items-center shrink-0 relative"

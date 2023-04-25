@@ -54,7 +54,7 @@ export default function Select(props: SelectProps) {
       )}
       <ReactSelect
         options={options}
-        value={defaultValue as unknown}
+        defaultValue={defaultValue as unknown}
         isMulti={isMulti}
         placeholder={placeholder}
         onChange={onChange}
