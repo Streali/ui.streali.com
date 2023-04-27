@@ -1,4 +1,4 @@
-import { RefObject, forwardRef, useEffect, useRef, useState } from 'react';
+import { RefObject, forwardRef, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Input } from '../../forms/input/input';
 import { Alpha, EditableInputHSLA, EditableInputRGBA, Hue, Saturation } from '@uiw/react-color';
 import { hexToHsva, hsvaToHex, hsvaToHexa } from '@uiw/color-convert';
@@ -44,13 +44,23 @@ interface ColorPickerProps {
   errorMessage?: string;
   label?: string;
   labelClassName?: string;
+  side?: 'left' | 'right';
 }
 
 export function ColorPicker(props: ColorPickerProps) {
-  const { value, haveInput = false, onChange, errorMessage, label, labelClassName } = props;
+  const {
+    value,
+    haveInput = false,
+    onChange,
+    errorMessage,
+    label,
+    labelClassName,
+    side = 'left',
+  } = props;
   const [val, setVal] = useState<string>(value || '#fff');
   const [hsva, setHsva] = useState(value ? hexToHsva(value) : { h: 0, s: 0, v: 0, a: 1 });
   const [isPickerOpen, setIsPickerOpen] = useState(false);
+  const [containerPos, setContainerPos] = useState({ x: 0, y: 0 });
 
   const handleHSVAChange = (newColor: { h: number; s: number; v: number; a: number }) => {
     setHsva(newColor);
@@ -69,7 +79,7 @@ export function ColorPicker(props: ColorPickerProps) {
   }, [value]);
 
   return (
-    <div>
+    <div className="relative">
       {label && (
         <Text className={`mb-2 block w-full ${labelClassName}`} type="medium">
           {label}
@@ -104,6 +114,7 @@ export function ColorPicker(props: ColorPickerProps) {
             hsva={hsva}
             onHsva={handleHSVAChange}
             onOverlayClick={() => setIsPickerOpen(false)}
+            side={side}
           />
         )}
       </AnimatePresence>
@@ -125,22 +136,24 @@ interface PickerProps {
   hsva: { h: number; s: number; v: number; a: number };
   onHsva: (hsva: { h: number; s: number; v: number; a: number }) => void;
   onOverlayClick: () => void;
+  side?: 'left' | 'right';
 }
 
 const Picker = forwardRef((props: PickerProps, ref) => {
-  const { hsva, onHsva, onOverlayClick } = props;
+  const { hsva, onHsva, onOverlayClick, side = 'left' } = props;
   const [currentInput, setCurrentInput] = useState<'Hex' | 'RGB' | 'HSL'>('Hex');
 
   return (
-    <Portal>
-      <div className="w-screen h-screen top-0 left-0 fixed z-10" onClick={onOverlayClick}></div>
+    <>
+      <div className="w-screen h-screen top-0 left-0 fixed z-[500]" onClick={onOverlayClick}></div>
       <motion.div
         variants={pickerAnimation}
         animate="in"
         initial="initial"
         exit="out"
         ref={ref as RefObject<HTMLDivElement>}
-        className="p-2 border border-grey-400 bg-grey-600 rounded w-fit max-w-[226px] mt-2 relative z-20">
+        className={`p-2 border border-grey-400 bg-grey-600 rounded w-fit max-w-[226px] mt-2 absolute z-[600]`}
+        style={{ translateX: side === 'left' ? 0 : 'calc(-100% + 40px)' }}>
         <Saturation
           className="!w-52 !h-52 mb-2"
           hsva={hsva}
@@ -203,6 +216,6 @@ const Picker = forwardRef((props: PickerProps, ref) => {
           )}
         </div>
       </motion.div>
-    </Portal>
+    </>
   );
 });

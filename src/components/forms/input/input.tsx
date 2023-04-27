@@ -43,16 +43,14 @@ export const Input = forwardRef((props: InputProps, ref) => {
       )}
 
       <div
-        className={`w-full flex h-10 rounded bg-grey-600 border border-grey-400 items-center gap-2 px-3 transition-all duration-200 ${
+        className={`w-full flex h-10 rounded justify-between bg-grey-600 border border-grey-400 items-center gap-2 px-3 transition-all duration-200 ${
           defineShapeClassName[shape]
         } ${isFocus && defineFocusClassName} ${rest.disabled && defineDisabledClassName} ${
           errorMessage && defineErrorClassName
         } ${containerClassName}`}>
         {iconLeft && <Icon name={iconLeft} className="-mt-0.5" />}
         <input
-          className={`placeholder:text-grey-300 font-sans bg-transparent flex-1 h-full outline-none -mt-0.5 appearance-none ${
-            suffix ? 'max-w-[calc(100%_-_20px)]' : 'max-w-full'
-          }`}
+          className={`placeholder:text-grey-300 font-sans bg-transparent flex-1 h-full outline-none -mt-0.5 appearance-none w-full`}
           ref={ref as RefObject<HTMLInputElement>}
           {...rest}
           onBlur={(e) => {

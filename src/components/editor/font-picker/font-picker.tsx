@@ -6,15 +6,15 @@ import Icon, { IconSVG } from '../../icon/icon';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from '../../../hooks/use-click-outside';
 
-type Font = {
+export type Font = {
   family: string;
   variants: { weight: number; file: string }[];
   from: 'google' | 'fontshare' | 'custom';
 };
 
 interface FontPickerProps {
-  value: string;
-  onChange: (font: Font) => void;
+  value?: string;
+  onChange?: (font: Font) => void;
   fonts: Font[];
   label?: string;
   labelClassName?: string;
@@ -50,7 +50,7 @@ const listAnimation = {
 };
 
 export default function FontPicker(props: FontPickerProps) {
-  const { value, onChange, fonts, label = 'Search a font', labelClassName = '' } = props;
+  const { value = 'Roboto', onChange, fonts, label, labelClassName = '' } = props;
   const [val, setVal] = useState<string>(value);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [filteredFonts, setFilteredFonts] = useState<Font[]>(fonts);
@@ -109,7 +109,7 @@ export default function FontPicker(props: FontPickerProps) {
                       from={font.from}
                       key={index}
                       onClick={() => {
-                        onChange(font);
+                        onChange && onChange(font);
                         setVal(font.family);
                         setIsOpen(false);
                       }}

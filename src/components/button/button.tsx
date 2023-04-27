@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Icon from '../icon/icon';
-import type { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, RefObject, forwardRef } from 'react';
 
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   children?: React.ReactNode;
@@ -33,7 +33,7 @@ const defineSizeClassName = {
   small: 'h-5 px-2.5 text-sm rounded-full',
 };
 
-function Button(props: ButtonProps) {
+export const Button = forwardRef((props: ButtonProps, ref) => {
   const {
     children,
     color = 'primary',
@@ -76,10 +76,8 @@ function Button(props: ButtonProps) {
   }
 
   return (
-    <button className={defineClassName} {...rest}>
+    <button className={defineClassName} ref={ref as RefObject<HTMLButtonElement>} {...rest}>
       {content}
     </button>
   );
-}
-
-export default Button;
+});
