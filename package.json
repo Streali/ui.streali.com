@@ -14,6 +14,7 @@
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.5",
     "@radix-ui/react-portal": "^1.0.2",
+    "@radix-ui/react-radio-group": "^1.1.2",
     "@radix-ui/react-slider": "^1.1.1",
     "@radix-ui/react-switch": "^1.0.2",
     "@uiw/color-convert": "^1.2.1",
