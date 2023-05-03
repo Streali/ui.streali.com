@@ -1,7 +1,7 @@
 import toast, { Toaster } from 'react-hot-toast';
 import { Button } from '../button/button';
 import Icon from '../icon/icon';
-import Text from '../text/text';
+import { Text } from '../text/text';
 import { Link } from 'react-router-dom';
 
 interface ToastProps {

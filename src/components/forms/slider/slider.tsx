@@ -1,5 +1,5 @@
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import Text from '../../text/text';
+import { Text } from '../../text/text';
 import { Input } from '../input/input';
 import { useEffect, useState } from 'react';
 

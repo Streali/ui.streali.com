@@ -7,7 +7,7 @@ import './color-picker.scss';
 import Icon from '../../icon/icon';
 import { Portal } from '@radix-ui/react-portal';
 import { AnimatePresence, motion } from 'framer-motion';
-import Text from '../../text/text';
+import { Text } from '../../text/text';
 
 const pickerAnimation = {
   initial: {

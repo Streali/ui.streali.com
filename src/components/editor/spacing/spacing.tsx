@@ -1,4 +1,4 @@
-import Text from '../../text/text';
+import { Text } from '../../text/text';
 
 interface SpacingProps {
   border: { top: number; right: number; bottom: number; left: number };

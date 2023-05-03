@@ -16,7 +16,7 @@ const defineTypeClassName = {
   h6: 'text-xs font-medium',
 };
 
-export default function Text(props: TextProps) {
+export function Text(props: TextProps) {
   const { children, type = 'content', className = '' } = props;
 
   return <span className={`${defineTypeClassName[type]} ${className}`}>{children}</span>;

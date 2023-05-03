@@ -1,5 +1,5 @@
 import * as RadioGroup from '@radix-ui/react-radio-group';
-import Text from '../../text/text';
+import { Text } from '../../text/text';
 
 type RadioItem = {
   label: string;

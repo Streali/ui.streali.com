@@ -3,7 +3,7 @@ import { Button } from '../../button/button';
 import { Input } from '../../forms/input/input';
 import Select from '../../forms/select/select';
 import { Popover } from '../../popover/popover';
-import Text from '../../text/text';
+import { Text } from '../../text/text';
 import { ColorPicker } from '../color-picker/color-picker';
 import FontPicker, { Font } from '../font-picker/font-picker';
 import { Shadow } from '../shadow/shadow';
