@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import Text from '../text/text';
+import { Text } from '../text/text';
 import { Button } from '../button/button';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';

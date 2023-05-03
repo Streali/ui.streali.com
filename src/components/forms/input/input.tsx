@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef, RefObject, forwardRef, useState } from 'react';
-import Text from '../../text/text';
+import { Text } from '../../text/text';
 import Icon from '../../icon/icon';
 
 interface InputProps extends ComponentPropsWithoutRef<'input'> {

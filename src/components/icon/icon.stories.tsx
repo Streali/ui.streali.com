@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Icon from './icon';
-import Text from '../text/text';
+import { Text } from '../text/text';
 
 //👇 This default export determines where your story goes in the story list
 const meta: Meta<typeof Icon> = {

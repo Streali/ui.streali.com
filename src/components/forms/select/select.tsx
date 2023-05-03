@@ -13,7 +13,7 @@ import ReactSelect, {
   ValueContainerProps,
   components,
 } from 'react-select';
-import Text from '../../text/text';
+import { Text } from '../../text/text';
 import Icon from '../../icon/icon';
 
 interface SelectProps {

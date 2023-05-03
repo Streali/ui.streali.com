@@ -1,5 +1,5 @@
 import * as SwitchPrimitive from '@radix-ui/react-switch';
-import Text from '../../text/text';
+import { Text } from '../../text/text';
 
 interface SwitchProps {
   label?: string;
