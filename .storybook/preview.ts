@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import type { Preview } from '@storybook/react';
 import '../src/index.scss';
 
