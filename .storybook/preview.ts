@@ -1,9 +1,13 @@
 import { Toaster } from 'react-hot-toast';
 import type { Preview } from '@storybook/react';
 import '../src/index.scss';
+import streali from './streali';
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      theme: streali,
+    },
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
