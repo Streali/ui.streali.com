@@ -1,5 +1,6 @@
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 import { Text } from '../../text/text';
+import { useState } from 'react';
 
 interface SwitchProps {
   label?: string;
@@ -7,7 +8,7 @@ interface SwitchProps {
   checked?: boolean;
   disabled?: boolean;
   onChange?: (checked: boolean) => void;
-  size: 'normal' | 'small';
+  size?: 'normal' | 'small';
 }
 
 const defineSizeClassNameRoot = {
@@ -22,7 +23,7 @@ const defineSizeClassNameThumb = {
 
 const defineDisabledClassName = 'bg-grey-300';
 
-export default function Switch(props: SwitchProps) {
+export function Switch(props: SwitchProps) {
   const {
     label,
     labelClassName = '',
@@ -32,12 +33,19 @@ export default function Switch(props: SwitchProps) {
     size = 'normal',
   } = props;
 
+  const [isSwitchChecked, setIsSwitchChecked] = useState<boolean>(checked);
+
+  const handleCheckedChange = (checked: boolean) => {
+    setIsSwitchChecked(checked);
+    onChange && onChange(checked);
+  };
+
   return (
     <div className="flex items-center w-full gap-3">
       <SwitchPrimitive.Root
-        defaultChecked={checked}
+        checked={isSwitchChecked}
         disabled={disabled}
-        onCheckedChange={onChange}
+        onCheckedChange={handleCheckedChange}
         className={`p-1 bg-grey-600 rounded-full relative border border-grey-400 focus:shadow-outline focus:border-primary-500 data-[state=checked]:bg-primary-500 outline-none cursor-default ${
           defineSizeClassNameRoot[size]
         } ${disabled && defineDisabledClassName}`}>
@@ -45,7 +53,11 @@ export default function Switch(props: SwitchProps) {
           className={`block w-4 h-4 bg-white rounded-full transition-transform duration-100 translate-x-0.5 will-change-transform ${defineSizeClassNameThumb[size]}`}
         />
       </SwitchPrimitive.Root>
-      {label && <Text className={labelClassName}>{label}</Text>}
+      {label && (
+        <Text className={labelClassName} onClick={() => setIsSwitchChecked(!isSwitchChecked)}>
+          {label}
+        </Text>
+      )}
     </div>
   );
 }
