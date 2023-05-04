@@ -2,6 +2,7 @@ interface TextProps {
   children: React.ReactNode;
   type?: 'content' | 'little' | 'medium' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   className?: string;
+  onClick?: () => void;
 }
 
 const defineTypeClassName = {
@@ -17,7 +18,11 @@ const defineTypeClassName = {
 };
 
 export function Text(props: TextProps) {
-  const { children, type = 'content', className = '' } = props;
+  const { children, type = 'content', className = '', onClick } = props;
 
-  return <span className={`${defineTypeClassName[type]} ${className}`}>{children}</span>;
+  return (
+    <span className={`${defineTypeClassName[type]} ${className}`} onClick={onClick}>
+      {children}
+    </span>
+  );
 }
