@@ -10,6 +10,7 @@ interface TitleBarProps {
   devMode?: boolean;
   devModeChecked?: boolean;
   onDevModeChange?: (devMode: boolean) => void;
+  onSaveClick: () => void;
 }
 
 export function TitleBar(props: TitleBarProps) {
@@ -19,6 +20,7 @@ export function TitleBar(props: TitleBarProps) {
     devMode = false,
     devModeChecked,
     onDevModeChange,
+    onSaveClick,
   } = props;
 
   const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -84,7 +86,9 @@ export function TitleBar(props: TitleBarProps) {
             }}
           />
         )}
-        <Button color="secondary">Save</Button>
+        <Button color="secondary" onClick={onSaveClick}>
+          Save
+        </Button>
       </div>
     </div>
   );
