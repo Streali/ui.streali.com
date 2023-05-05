@@ -2,17 +2,19 @@ import { Link } from 'react-router-dom';
 import { Popover } from '../popover/popover';
 import Icon from '../icon/icon';
 
+export type PopoverMenuItem = {
+  label: string;
+  onClick?: () => void;
+  link?: string;
+  external?: boolean;
+  disabled?: boolean;
+  className?: string;
+  iconLeft?: string;
+};
+
 interface PopoverMenuProps {
   trigger: React.ReactNode;
-  menu: {
-    label: string;
-    onClick?: () => void;
-    link?: string;
-    external?: boolean;
-    disabled?: boolean;
-    className?: string;
-    iconLeft?: string;
-  }[];
+  menu: PopoverMenuItem[];
 }
 
 export function PopoverMenu(props: PopoverMenuProps) {
