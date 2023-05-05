@@ -43,7 +43,7 @@ export function Popover(props: PopoverProps) {
   return (
     <AnimatePresence>
       <PopoverPrimitive.Root>
-        <PopoverPrimitive.Trigger asChild>{trigger}</PopoverPrimitive.Trigger>
+        <PopoverPrimitive.Trigger>{trigger}</PopoverPrimitive.Trigger>
         <PopoverPrimitive.Anchor />
         <PopoverPrimitive.Portal>
           <PopoverPrimitive.Content align={align} side={side} sideOffset={10}>
