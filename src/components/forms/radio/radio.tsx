@@ -11,14 +11,16 @@ interface RadioProps {
   name: string;
   defaultValue?: string;
   align?: 'horizontal' | 'vertical';
+  onChange?: (value: string) => void;
 }
 
 function Radio(props: RadioProps) {
-  const { items, name, defaultValue, align = 'vertical' } = props;
+  const { items, name, defaultValue, align = 'vertical', onChange } = props;
 
   return (
     <RadioGroup.Root
       name={name}
+      onValueChange={(value) => onChange && onChange(value)}
       defaultValue={defaultValue}
       className={`flex gap-4 ${align === 'vertical' ? 'flex-col' : 'flex-row'}`}>
       {items.map((item) => (
