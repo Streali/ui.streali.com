@@ -26,10 +26,11 @@ interface NavigationProps {
   navigation: NavigationItem[];
   bottomNavigation: NavigationBottomItem[];
   version: string;
+  customContent?: React.ReactNode;
 }
 
 export function Navigation(props: NavigationProps) {
-  const { logo, user, navigation, bottomNavigation, version } = props;
+  const { logo, user, navigation, bottomNavigation, version, customContent } = props;
 
   return (
     <div className="fixed top-0 left-0 w-56 h-screen bg-grey-600 border-r border-grey-400 flex flex-col justify-between">
@@ -48,6 +49,7 @@ export function Navigation(props: NavigationProps) {
         </nav>
       </div>
       <div className="flex flex-col gap-2">
+        {customContent}
         <div className="flex flex-col gap-2 p-4">
           {bottomNavigation.map((item) => (
             <NavigationItemBottom key={item.label} {...item} />
