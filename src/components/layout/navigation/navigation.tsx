@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Avatar } from '../../avatar/avatar';
-import { Logo } from '../../logo/logo';
 import { PopoverMenu, PopoverMenuItem } from '../../popover-menu/popover-menu';
 import Icon from '../../icon/icon';
 import { Text } from '../../text/text';
@@ -21,7 +20,7 @@ interface NavigationProps {
   logo: React.ReactNode;
   user: {
     username: string;
-    avatarUrl: string;
+    avatarUrl?: string;
     menu: PopoverMenuItem[];
   };
   navigation: NavigationItem[];
