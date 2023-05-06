@@ -87,7 +87,21 @@ export default {
       },
       "boxShadow": {
         "outline": "0 0 8px 0 rgba(81, 41, 240, 0.4)",
-      }
+      },
+      "keyframes": {
+        slideDown: {
+          from: { height: 0, marginTop: 0 },
+          to: { height: 'var(--radix-accordion-content-height)', marginTop: '12px' },
+        },
+        slideUp: {
+          from: { height: 'var(--radix-accordion-content-height)', marginTop: '12px' },
+          to: { height: 0, marginTop: 0 },
+        },
+      },
+      animation: {
+        slideDown: 'slideDown 600ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideUp: 'slideUp 600ms cubic-bezier(0.87, 0, 0.13, 1)',
+      },
     },
   },
   plugins: [],
