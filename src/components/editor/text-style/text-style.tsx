@@ -116,8 +116,6 @@ export function TextStyle(props: TextStyleProps) {
     }
   }, [settings]);
 
-  console.log(fontSettings);
-
   return (
     <div className="">
       <div className="flex gap-2 mb-2">

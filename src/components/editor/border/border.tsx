@@ -3,6 +3,11 @@ import Select from '../../forms/select/select';
 import { ColorPicker } from '../color-picker/color-picker';
 import { Text } from '../../text/text';
 
+export type BorderType = {
+  color: string;
+  type: string;
+};
+
 const borderTypes = [
   { label: 'Solid', value: 'solid' },
   { label: 'Dashed', value: 'dashed' },

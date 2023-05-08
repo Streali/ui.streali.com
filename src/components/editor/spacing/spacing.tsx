@@ -1,14 +1,17 @@
 import { Text } from '../../text/text';
 
+export type SpacingType = {
+  top: number;
+  right: number;
+  bottom: number;
+  left: number;
+};
+
 interface SpacingProps {
-  border: { top: number; right: number; bottom: number; left: number };
-  margin: { top: number; right: number; bottom: number; left: number };
-  padding: { top: number; right: number; bottom: number; left: number };
-  onChange?: (value: {
-    border: { top: number; right: number; bottom: number; left: number };
-    margin: { top: number; right: number; bottom: number; left: number };
-    padding: { top: number; right: number; bottom: number; left: number };
-  }) => void;
+  border: SpacingType;
+  margin: SpacingType;
+  padding: SpacingType;
+  onChange?: (value: { border: SpacingType; margin: SpacingType; padding: SpacingType }) => void;
 }
 
 export function Spacing(props: SpacingProps) {

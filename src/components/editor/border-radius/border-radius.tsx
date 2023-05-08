@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Text } from '../../text/text';
 import { Input } from '../../forms/input/input';
-import Button from '../../button/button';
+import { Button } from '../../button/button';
+
+export type BorderRadiusType = {
+  topLeft: number;
+  topRight: number;
+  bottomLeft: number;
+  bottomRight: number;
+};
 
 interface BorderRadiusProps {
-  value?: { topLeft: number; topRight: number; bottomLeft: number; bottomRight: number };
-  onChange?: (value: {
-    topLeft: number;
-    topRight: number;
-    bottomLeft: number;
-    bottomRight: number;
-  }) => void;
+  value?: BorderRadiusType;
+  onChange?: (value: BorderRadiusType) => void;
   label?: string;
   labelClassName?: string;
 }
