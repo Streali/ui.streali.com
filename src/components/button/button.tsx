@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Icon from '../icon/icon';
+import Icon, { IconSVG } from '../icon/icon';
 import { ComponentPropsWithoutRef, RefObject, forwardRef } from 'react';
 
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
@@ -10,7 +10,12 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   size?: 'normal' | 'small';
   loading?: boolean;
   iconLeft?: string;
+  iconLeftSvg?: IconSVG;
   iconRight?: string;
+  iconRightSvg?: IconSVG;
+  iconSvgWidth?: number;
+  iconSvgHeight?: number;
+  iconSvgClassName?: string;
 }
 
 const defineColorClassName = {
@@ -43,6 +48,11 @@ export const Button = forwardRef((props: ButtonProps, ref) => {
     loading = false,
     iconLeft,
     iconRight,
+    iconLeftSvg,
+    iconRightSvg,
+    iconSvgWidth,
+    iconSvgHeight,
+    iconSvgClassName = '',
     ...rest
   } = props;
 
@@ -50,8 +60,24 @@ export const Button = forwardRef((props: ButtonProps, ref) => {
     <>
       {loading && <Icon name="loader-4-line" spin />}
       {iconLeft && !loading && <Icon name={iconLeft} />}
+      {iconLeftSvg && !loading && (
+        <Icon
+          svg={iconLeftSvg}
+          width={iconSvgWidth}
+          height={iconSvgHeight}
+          className={iconSvgClassName}
+        />
+      )}
       {children}
-      {iconRight && <Icon name={iconRight} />}
+      {iconRight && (
+        <Icon
+          name={iconRight}
+          width={iconSvgWidth}
+          height={iconSvgHeight}
+          className={iconSvgClassName}
+        />
+      )}
+      {iconRightSvg && <Icon svg={iconRightSvg} />}
     </>
   );
 

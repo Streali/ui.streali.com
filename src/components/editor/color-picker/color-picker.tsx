@@ -45,6 +45,7 @@ interface ColorPickerProps {
   label?: string;
   labelClassName?: string;
   side?: 'left' | 'right';
+  containerClassName?: string;
 }
 
 export function ColorPicker(props: ColorPickerProps) {
@@ -56,6 +57,7 @@ export function ColorPicker(props: ColorPickerProps) {
     label,
     labelClassName,
     side = 'left',
+    containerClassName = '',
   } = props;
   const [val, setVal] = useState<string>(value || '#fff');
   const [hsva, setHsva] = useState(value ? hexToHsva(value) : { h: 0, s: 0, v: 0, a: 1 });
@@ -79,7 +81,7 @@ export function ColorPicker(props: ColorPickerProps) {
   }, [value]);
 
   return (
-    <div className="relative">
+    <div className={`relative ${containerClassName}`}>
       {label && (
         <Text className={`mb-2 block w-full ${labelClassName}`} type="medium">
           {label}
