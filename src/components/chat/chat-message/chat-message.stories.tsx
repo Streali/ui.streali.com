@@ -34,14 +34,14 @@ export const Default: Story = {
           blur: 0,
         },
         border: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0,
-        },
-        borderType: {
           type: 'solid',
           color: '#000000',
+          size: {
+            top: 1,
+            right: 1,
+            bottom: 1,
+            left: 1,
+          },
         },
         margin: {
           top: 0,
@@ -87,14 +87,14 @@ export const Default: Story = {
           blur: 0,
         },
         border: {
-          top: 1,
-          right: 1,
-          bottom: 1,
-          left: 1,
-        },
-        borderType: {
           type: 'solid',
           color: '#000000',
+          size: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+          },
         },
         margin: {
           top: 0,
@@ -147,14 +147,14 @@ export const Default: Story = {
           blur: 0,
         },
         border: {
-          top: 1,
-          right: 1,
-          bottom: 1,
-          left: 1,
-        },
-        borderType: {
           type: 'solid',
           color: '#000000',
+          size: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+          },
         },
         margin: {
           top: 0,

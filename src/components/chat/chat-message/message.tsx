@@ -11,8 +11,7 @@ export type MessageType = {
   backgroundProviderColor: boolean;
   background: string;
   shadow: ShadowType;
-  border: SpacingType;
-  borderType: BorderType;
+  border: BorderType;
   margin: SpacingType;
   padding: SpacingType;
   radius: BorderRadiusType;
@@ -42,10 +41,10 @@ export function Message(props: MessageProps) {
     textShadow: `${settings.text.textShadow.x}px ${settings.text.textShadow.y}px ${settings.text.textShadow.blur}px ${settings.text.textShadow.color}`,
     background: settings.backgroundProviderColor ? providerColor : settings.background,
     boxShadow: `${settings.shadow.x}px ${settings.shadow.y}px ${settings.shadow.blur}px ${settings.shadow.color}`,
-    borderTop: `${settings.border.top}px ${settings.borderType.type} ${settings.borderType.color}`,
-    borderRight: `${settings.border.right}px ${settings.borderType.type} ${settings.borderType.color}`,
-    borderBottom: `${settings.border.bottom}px ${settings.borderType.type} ${settings.borderType.color}`,
-    borderLeft: `${settings.border.left}px ${settings.borderType.type} ${settings.borderType.color}`,
+    borderTop: `${settings.border.size.top}px ${settings.border.type} ${settings.border.color}`,
+    borderRight: `${settings.border.size.right}px ${settings.border.type} ${settings.border.color}`,
+    borderBottom: `${settings.border.size.bottom}px ${settings.border.type} ${settings.border.color}`,
+    borderLeft: `${settings.border.size.left}px ${settings.border.type} ${settings.border.color}`,
     margin: `${settings.margin.top}px ${settings.margin.right}px ${settings.margin.bottom}px ${settings.margin.left}px`,
     padding: `${settings.padding.top}px ${settings.padding.right}px ${settings.padding.bottom}px ${settings.padding.left}px`,
     borderRadius: `${settings.radius.topLeft}px ${settings.radius.topRight}px ${settings.radius.bottomRight}px ${settings.radius.bottomLeft}px`,
