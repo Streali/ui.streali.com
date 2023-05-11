@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Border from './border';
+import { Border } from './border';
 
 const meta: Meta<typeof Border> = {
   title: 'Editor/Border',
