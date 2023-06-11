@@ -140,7 +140,7 @@ function BorderTrigger(props: BorderTriggerProps) {
   return (
     <div className="w-full h-10 border border-grey-400 bg-grey-600 rounded flex items-center px-2 gap-2 cursor-pointer hover:border-grey-300 transition-colors duration-200">
       <div className="w-6 h-6 rounded" style={{ backgroundColor: color }}></div>
-      <Text type="medium" className="capitalize">
+      <Text type="content" className="capitalize">
         {type}
       </Text>
     </div>
