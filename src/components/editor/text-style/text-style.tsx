@@ -189,6 +189,7 @@ export function TextStyle(props: TextStyleProps) {
       <div className="mt-2 w-full flex justify-end">
         <Popover
           align="end"
+          triggerClassName="!w-auto"
           trigger={
             <Button color="secondary" size="small" iconRight="arrow-down-s-line">
               More

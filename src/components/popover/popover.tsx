@@ -35,15 +35,18 @@ interface PopoverProps {
   children: React.ReactNode;
   side?: 'top' | 'bottom' | 'left' | 'right';
   align?: 'start' | 'center' | 'end';
+  triggerClassName?: string;
 }
 
 export function Popover(props: PopoverProps) {
-  const { trigger, children, side = 'bottom', align = 'start' } = props;
+  const { trigger, children, side = 'bottom', align = 'start', triggerClassName = '' } = props;
 
   return (
     <AnimatePresence>
       <PopoverPrimitive.Root>
-        <PopoverPrimitive.Trigger className="w-full">{trigger}</PopoverPrimitive.Trigger>
+        <PopoverPrimitive.Trigger className={`w-full ${triggerClassName}`}>
+          {trigger}
+        </PopoverPrimitive.Trigger>
         <PopoverPrimitive.Anchor />
         <PopoverPrimitive.Portal>
           <PopoverPrimitive.Content align={align} side={side} sideOffset={10}>
