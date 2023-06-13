@@ -7,7 +7,7 @@ import { Message, MessageType } from './message';
 export type Global = {
   spaceBetweenMessages: number;
   alignment: 'left' | 'center' | 'right';
-  layout: 'stack' | 'inline';
+  layout: 'stack' | 'inline' | 'flex';
   order: { id: string; name: string }[];
   animation: string;
   developer_mode?: boolean;
@@ -71,6 +71,7 @@ export function ChatMessage(props: ChatMessageProps) {
                 pseudo={message.pseudo}
                 badges={message.badges || []}
                 providerColor={message.color}
+                layout={settings.global.layout}
               />
             )}
             {item.id === 'message' && (
@@ -79,6 +80,7 @@ export function ChatMessage(props: ChatMessageProps) {
                 settings={settings.message}
                 message={message.message}
                 providerColor={message.color}
+                layout={settings.global.layout}
               />
             )}
           </Fragment>
