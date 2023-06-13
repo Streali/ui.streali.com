@@ -22,12 +22,14 @@ interface MessageProps {
   settings: MessageType;
   message: string;
   providerColor?: string;
+  layout: 'stack' | 'inline' | 'flex';
 }
 
 export function Message(props: MessageProps) {
-  const { settings, message, providerColor } = props;
+  const { settings, message, providerColor, layout } = props;
 
   const messageStyle: CSSProperties = {
+    display: layout === 'flex' ? 'inline' : 'flex',
     width: settings.fullWidth ? '100%' : 'auto',
     fontFamily: settings.text.fontFamily,
     fontSize: settings.text.fontSize + 'px',

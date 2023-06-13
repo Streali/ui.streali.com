@@ -31,12 +31,14 @@ interface NameProps {
   pseudo: string;
   badges: string[];
   providerColor?: string;
+  layout: 'stack' | 'inline' | 'flex';
 }
 
 export function Name(props: NameProps) {
-  const { settings, pseudo, badges, providerColor } = props;
+  const { settings, pseudo, badges, providerColor, layout } = props;
 
   const nameStyle: CSSProperties = {
+    display: layout === 'flex' ? 'inline-block' : 'flex',
     width: settings.fullWidth ? '100%' : 'auto',
     fontFamily: settings.text.fontFamily,
     fontSize: settings.text.fontSize + 'px',
@@ -88,9 +90,15 @@ export function Name(props: NameProps) {
               ? 'center'
               : 'end',
         }}>
-        {settings.badges.enabled && settings.badges.position === 'left' && badgeContent}
+        {settings?.badges.enabled &&
+          settings?.badges.position === 'left' &&
+          badges.length > 0 &&
+          badgeContent}
         {pseudo}
-        {settings.badges.enabled && settings.badges.position === 'right' && badgeContent}
+        {settings?.badges.enabled &&
+          settings?.badges.position === 'right' &&
+          badges.length > 0 &&
+          badgeContent}
       </div>
     </div>
   );
