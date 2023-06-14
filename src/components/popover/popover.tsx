@@ -36,10 +36,20 @@ interface PopoverProps {
   side?: 'top' | 'bottom' | 'left' | 'right';
   align?: 'start' | 'center' | 'end';
   triggerClassName?: string;
+  contentClassName?: string;
+  className?: string;
 }
 
 export function Popover(props: PopoverProps) {
-  const { trigger, children, side = 'bottom', align = 'start', triggerClassName = '' } = props;
+  const {
+    trigger,
+    children,
+    side = 'bottom',
+    align = 'start',
+    triggerClassName = '',
+    className = '',
+    contentClassName = '',
+  } = props;
 
   return (
     <AnimatePresence>
@@ -49,9 +59,13 @@ export function Popover(props: PopoverProps) {
         </PopoverPrimitive.Trigger>
         <PopoverPrimitive.Anchor />
         <PopoverPrimitive.Portal>
-          <PopoverPrimitive.Content align={align} side={side} sideOffset={10}>
+          <PopoverPrimitive.Content
+            align={align}
+            side={side}
+            sideOffset={10}
+            className={contentClassName}>
             <motion.div
-              className="w-80 p-3 bg-grey-700 border border-grey-400 rounded"
+              className={`w-80 p-3 bg-grey-700 border border-grey-400 rounded ${className}`}
               variants={popoverAnimation}
               initial="initial"
               animate="in"

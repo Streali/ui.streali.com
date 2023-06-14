@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Input } from '../../forms/input/input';
 import * as Portal from '@radix-ui/react-portal';
 import { Text } from '../../text/text';
-import Icon, { IconSVG } from '../../icon/icon';
+import { Icon, IconSVG } from '../../icon/icon';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useClickOutside } from '../../../hooks/use-click-outside';
 
