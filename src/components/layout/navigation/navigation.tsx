@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Avatar } from '../../avatar/avatar';
 import { PopoverMenu, PopoverMenuItem } from '../../popover-menu/popover-menu';
-import Icon from '../../icon/icon';
+import { Icon } from '../../icon/icon';
 import { Text } from '../../text/text';
 
 export type NavigationItem = {

@@ -4,7 +4,7 @@ import { Alpha, EditableInputHSLA, EditableInputRGBA, Hue, Saturation } from '@u
 import { hexToHsva, hsvaToHex, hsvaToHexa } from '@uiw/color-convert';
 import EditableInput from '@uiw/react-color-editable-input';
 import './color-picker.scss';
-import Icon from '../../icon/icon';
+import { Icon } from '../../icon/icon';
 import { Portal } from '@radix-ui/react-portal';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Text } from '../../text/text';

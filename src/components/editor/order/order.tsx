@@ -1,5 +1,5 @@
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
-import Icon from '../../icon/icon';
+import { Icon } from '../../icon/icon';
 import { useState } from 'react';
 import { Text } from '../../text/text';
 
