@@ -1,4 +1,4 @@
-import Icon from '../icon/icon';
+import { Icon } from '../icon/icon';
 import { Text } from '../text/text';
 
 interface InformationBoxProps {

@@ -14,7 +14,7 @@ import ReactSelect, {
   components,
 } from 'react-select';
 import { Text } from '../../text/text';
-import Icon from '../../icon/icon';
+import { Icon } from '../../icon/icon';
 
 interface SelectProps {
   label?: string;

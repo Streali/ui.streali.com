@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Popover } from '../popover/popover';
-import Icon from '../icon/icon';
+import { Icon } from '../icon/icon';
 
 export type PopoverMenuItem = {
   label: string;
