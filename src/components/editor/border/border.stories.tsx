@@ -11,11 +11,8 @@ type Story = StoryObj<typeof Border>;
 
 export const Default: Story = {
   args: {
-    type: 'solid',
-    color: '#ff0000',
-    onChange: (color: string, type: string) => {
-      console.log('color', color);
-      console.log('type', type);
+    onChange: (border) => {
+      console.log(border);
     },
     label: 'Border',
   },
