@@ -7,10 +7,10 @@ import { useEffect, useState } from 'react';
 interface ModalProps {
   children: React.ReactNode;
   trigger: React.ReactNode;
-  buttons: React.ReactNode;
+  buttons?: React.ReactNode;
   title: string;
   onOpenChange?: (open: boolean) => void;
-  open: boolean;
+  open?: boolean;
 }
 
 const modalAnimation = {
