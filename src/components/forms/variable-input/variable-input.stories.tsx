@@ -14,5 +14,19 @@ export const Default: Story = {
   args: {
     label: 'Variable Textarea',
     errorMessage: '',
+    data: [
+      {
+        id: '1',
+        display: 'First Name',
+      },
+      {
+        id: '2',
+        display: 'Last Name',
+      },
+      {
+        id: '3',
+        display: 'Email',
+      },
+    ],
   },
 };

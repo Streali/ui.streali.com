@@ -54,7 +54,7 @@ export function Popover(props: PopoverProps) {
   return (
     <AnimatePresence>
       <PopoverPrimitive.Root>
-        <PopoverPrimitive.Trigger className={`w-full ${triggerClassName}`}>
+        <PopoverPrimitive.Trigger className={`w-auto ${triggerClassName}`}>
           {trigger}
         </PopoverPrimitive.Trigger>
         <PopoverPrimitive.Anchor />
