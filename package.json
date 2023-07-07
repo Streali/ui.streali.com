@@ -1,7 +1,7 @@
 {
-  "name": "ui",
+  "name": "@streali/ui",
   "private": true,
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "type": "module",
   "packageManager": "pnpm@8.6.1",
   "scripts": {
@@ -10,8 +10,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
-    "semantic-release": "semantic-release"
+    "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.2.0",
