@@ -4,7 +4,7 @@ import { Input } from '../input/input';
 import { useEffect, useState } from 'react';
 
 interface SliderProps {
-  value: number;
+  value?: number;
   onChange?: (value: number) => void;
   haveInput?: boolean;
   inputSuffix?: string;
@@ -13,6 +13,7 @@ interface SliderProps {
   step?: number;
   label?: string;
   labelClassName?: string;
+  containerClassName?: string;
 }
 
 function Slider(props: SliderProps) {
@@ -26,9 +27,10 @@ function Slider(props: SliderProps) {
     label,
     labelClassName,
     inputSuffix,
+    containerClassName = '',
   } = props;
 
-  const [val, setVal] = useState<number>(value);
+  const [val, setVal] = useState<number>(value || 0);
 
   const handleSliderChange = (value: number) => {
     setVal(value);
@@ -41,11 +43,11 @@ function Slider(props: SliderProps) {
   };
 
   useEffect(() => {
-    setVal(value);
+    setVal(value || 0);
   }, [value]);
 
   return (
-    <div>
+    <div className={containerClassName}>
       {label && (
         <Text type="medium" className={`block ${haveInput ? 'mb-0' : 'mb-1'} ${labelClassName}`}>
           {label}
