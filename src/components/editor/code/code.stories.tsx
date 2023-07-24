@@ -11,8 +11,8 @@ type Story = StoryObj<typeof Code>;
 
 export const Default: Story = {
   args: {
-    initialValue: '<p>Coucou</p>',
-    className: 'h-[500px]',
+    initialValue: '<p>Hello world</p>',
+    editorClassName: 'h-[500px]',
     language: 'html',
   },
 };

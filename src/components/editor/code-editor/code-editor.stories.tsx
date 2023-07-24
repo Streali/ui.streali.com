@@ -10,5 +10,9 @@ export default meta;
 type Story = StoryObj<typeof CodeEditor>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    html: `<div>Hello world</div>`,
+    css: `div { color: red; }`,
+    js: `console.log('Hello world');`,
+  },
 };
