@@ -8,6 +8,7 @@ import IconFlex from './svg/icon-flex';
 import IconFontshare from './svg/icon-fontshare';
 import IconGoogleFont from './svg/icon-googlefont';
 import IconInline from './svg/icon-inline';
+import IconKick from './svg/icon-kick';
 import IconPop from './svg/icon-pop';
 import IconRadiusBottomRight from './svg/icon-radius-bottom-right';
 import IconRadiusBottomLeft from './svg/icon-radius-bottomleft';
@@ -48,6 +49,7 @@ export enum IconSVG {
   'fade' = 'fade',
   'pop' = 'pop',
   'spin' = 'spin',
+  'kick' = 'kick',
 }
 
 interface IconProps {
@@ -107,6 +109,7 @@ export function Icon(props: IconProps) {
     [IconSVG['fade']]: <IconFade width={width} height={height} className={className} />,
     [IconSVG['pop']]: <IconPop width={width} height={height} className={className} />,
     [IconSVG['spin']]: <IconSpin width={width} height={height} className={className} />,
+    [IconSVG['kick']]: <IconKick width={width} height={height} className={className} />,
   };
 
   if (svg) return svgIcon[svg];

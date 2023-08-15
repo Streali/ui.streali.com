@@ -102,7 +102,7 @@ export const Button = forwardRef((props: ButtonProps, ref) => {
   }
 
   return (
-    <button className={defineClassName} ref={ref as RefObject<HTMLButtonElement>} {...rest}>
+    <button {...rest} className={defineClassName} ref={ref as RefObject<HTMLButtonElement>}>
       {content}
     </button>
   );
