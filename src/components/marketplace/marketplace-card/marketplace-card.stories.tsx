@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { MarketplaceCard } from './marketplace-card';
 
 const meta: Meta<typeof MarketplaceCard> = {
-  title: 'Layout/Marketplace Card',
+  title: 'Marketplace/Marketplace Card',
   component: MarketplaceCard,
 };
 
