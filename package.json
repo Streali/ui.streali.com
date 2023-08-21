@@ -41,7 +41,8 @@
     "react-router-dom": "^6.10.0",
     "react-select": "^5.7.2",
     "remixicon": "^3.1.1",
-    "sass": "^1.62.0"
+    "sass": "^1.62.0",
+    "swiper": "^10.2.0"
   },
   "devDependencies": {
     "@semantic-release/git": "~10.0.1",
