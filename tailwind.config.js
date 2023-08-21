@@ -72,6 +72,10 @@ export default {
           "800": "#5e4412",
           "900": "#2f2209"
         },
+        "social": {
+          "twitch": "#A970FF",
+          "kick": "#53FC18"
+        }
       },
       "fontFamily": {
         "sans": "Satoshi",
