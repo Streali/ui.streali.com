@@ -1,3 +1,4 @@
+import './index.scss';
 export * from './components/accordion/accordion';
 export * from './components/avatar/avatar';
 export * from './components/badge/badge';
