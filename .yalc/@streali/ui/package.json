@@ -54,37 +54,12 @@
     "sass": "^1.62.0",
     "swiper": "^10.2.0"
   },
-  "devDependencies": {
-    "@semantic-release/git": "~10.0.1",
-    "@storybook/addon-essentials": "^7.0.26",
-    "@storybook/addon-interactions": "^7.0.26",
-    "@storybook/addon-links": "^7.0.26",
-    "@storybook/addon-mdx-gfm": "^7.0.26",
-    "@storybook/blocks": "^7.0.26",
-    "@storybook/manager-api": "^7.0.26",
-    "@storybook/react": "^7.0.26",
-    "@storybook/react-vite": "^7.0.26",
-    "@storybook/testing-library": "^0.2.0",
-    "@storybook/theming": "^7.0.26",
-    "@types/react": "^18.0.28",
-    "@types/react-color": "^3.0.6",
-    "@types/react-dom": "^18.0.11",
-    "@types/react-mentions": "^4.1.8",
-    "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "prop-types": "^15.8.1",
-    "semantic-release": "^21.0.7",
-    "storybook": "^7.0.26",
-    "tailwindcss": "^3.3.1",
-    "typescript": "^4.9.3",
-    "vite": "^4.2.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Streali/UI.git"
   },
   "publishConfig": {
     "access": "restricted"
-  }
+  },
+  "yalcSig": "200b661498a9a944fe9af3a3966eb922"
 }
