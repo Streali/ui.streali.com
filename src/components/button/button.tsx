@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@inertiajs/react';
 import { Icon, IconSVG } from '../icon/icon';
 import { ComponentPropsWithoutRef, RefObject, forwardRef } from 'react';
 
@@ -87,7 +87,7 @@ export const Button = forwardRef((props: ButtonProps, ref) => {
 
   if (link && !external) {
     return (
-      <Link to={link} className={defineClassName}>
+      <Link href={link} className={defineClassName}>
         {content}
       </Link>
     );
