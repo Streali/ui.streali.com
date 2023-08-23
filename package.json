@@ -2,14 +2,11 @@
   "name": "@streali/ui",
   "version": "1.0.0",
   "type": "module",
-  "exports": {
-    "require": "./dist/streali-ui.cjs.js",
-    "default": "./dist/streali-ui.es.js"
-  },
   "files": [
     "dist"
   ],
-  "main": "dist/streali-ui.cjs.js",
+  "main": "dist/streali-ui.es.js",
+  "module": "dist/streali-ui.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "vite",
