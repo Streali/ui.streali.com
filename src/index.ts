@@ -52,3 +52,6 @@ export * from './components/layout/shell/shell';
 export * from './components/layout/title-rotate/title-rotate';
 
 export * from './components/marketplace/marketplace-card/marketplace-card';
+
+export * from './hooks/use-click-outside';
+export * from './hooks/use-media-query';
