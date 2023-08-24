@@ -16,7 +16,7 @@ interface SliderProps {
   containerClassName?: string;
 }
 
-function Slider(props: SliderProps) {
+export function Slider(props: SliderProps) {
   const {
     value,
     onChange,
@@ -81,5 +81,3 @@ function Slider(props: SliderProps) {
     </div>
   );
 }
-
-export default Slider;

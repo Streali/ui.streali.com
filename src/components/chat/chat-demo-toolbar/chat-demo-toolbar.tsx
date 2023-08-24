@@ -1,6 +1,6 @@
 import { Button } from '../../button/button';
 import { ColorPicker } from '../../editor/color-picker/color-picker';
-import Slider from '../../forms/slider/slider';
+import { Slider } from '../../forms/slider/slider';
 import { Tooltip } from '../../tooltip/tooltip';
 
 interface ChatDemoToolbarProps {
