@@ -12,7 +12,7 @@ interface InputProps extends ComponentPropsWithoutRef<'input'> {
   errorMessage?: string;
 }
 
-const defineFocusClassName = 'border-primary-500 shadow-outline';
+const defineFocusClassName = '!border-primary-500 shadow-outline';
 const defineDisabledClassName = 'bg-grey-400 text-grey-100';
 const defineShapeClassName = {
   normal: 'h-10',

@@ -19,16 +19,18 @@ interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
 }
 
 const defineColorClassName = {
-  primary: 'bg-primary-500 hover:bg-primary-600 focus-visible:bg-primary-500 outline-primary-500',
+  primary:
+    '!bg-primary-500 hover:!bg-primary-600 focus-visible:!bg-primary-500 outline-primary-500',
   secondary:
-    'bg-secondary-500 hover:bg-secondary-600 text-grey-700 focus-visible:bg-secondary-500 outline-secondary-500',
-  error: 'bg-error-500 focus-visible:bg-error-500 outline-error-500 hover:bg-error-600',
-  transparent: 'bg-transparent hover:bg-grey-400 focus-visible:bg-transparent outline-grey-100',
+    '!bg-secondary-500 hover:!bg-secondary-600 text-grey-700 focus-visible:!bg-secondary-500 outline-secondary-500',
+  error: '!bg-error-500 focus-visible:!bg-error-500 outline-error-500 hover:!bg-error-600',
+  transparent: 'bg-transparent hover:!bg-grey-400 focus-visible:!bg-transparent outline-grey-100',
   warning:
-    'bg-warning-500 text-grey-700 focus-visible:bg-warning-500 outline-warning-500 hover:bg-warning-600',
-  success: 'bg-success-500 focus-visible:bg-success-500 outline-success-500 hover:bg-success-600',
+    '!bg-warning-500 text-grey-700 focus-visible:!bg-warning-500 outline-warning-500 hover:!bg-warning-600',
+  success:
+    '!bg-success-500 focus-visible:!bg-success-500 outline-success-500 hover:!bg-success-600',
   stroke:
-    'bg-transparent border border-grey-400 hover:bg-grey-400 focus-visible:bg-transparent outline-grey-100',
+    'bg-transparent border border-grey-400 hover:!bg-grey-400 focus-visible:bg-transparent outline-grey-100',
 };
 
 const defineDisableClassName = `bg-grey-100 text-grey-400 hover:bg-grey-100 focus-visible:bg-grey-400 outline-grey-100 cursor-not-allowed`;
