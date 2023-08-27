@@ -1,7 +1,7 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 
 interface CheckboxProps {
-  label: string;
+  label: string | React.ReactNode;
   value: string;
   checked?: boolean;
   onChange?: (checked: boolean | 'indeterminate') => void;
