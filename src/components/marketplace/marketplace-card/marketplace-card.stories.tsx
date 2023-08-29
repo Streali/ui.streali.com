@@ -13,7 +13,8 @@ export const Default: Story = {
   args: {
     children: <div className="w-full h-full flex items-center justify-center">Card content</div>,
     title: 'Card Title',
-    price: 'free',
-    isFavorite: true,
+    price: 10.99,
+    isFavorite: false,
+    username: 'willtraore',
   },
 };
