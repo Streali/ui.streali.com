@@ -35,7 +35,7 @@ export const Input = forwardRef((props: InputProps, ref) => {
   const [isFocus, setIsFocus] = useState(false);
 
   return (
-    <>
+    <div className={containerClassName}>
       {label && (
         <Text className={`mb-2 block w-full ${labelClassName}`} type="medium">
           {label}
@@ -47,7 +47,7 @@ export const Input = forwardRef((props: InputProps, ref) => {
           defineShapeClassName[shape]
         } ${isFocus && defineFocusClassName} ${rest.disabled && defineDisabledClassName} ${
           errorMessage && defineErrorClassName
-        } ${containerClassName}`}>
+        }`}>
         {iconLeft && <Icon name={iconLeft} className="-mt-0.5" />}
         <input
           {...rest}
@@ -71,6 +71,6 @@ export const Input = forwardRef((props: InputProps, ref) => {
           {errorMessage}
         </Text>
       )}
-    </>
+    </div>
   );
 });
