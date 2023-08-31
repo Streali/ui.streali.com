@@ -37,7 +37,7 @@ export function SocialProvider(props: SocialProviderProps) {
 
   return (
     <div className="w-full p-6 rounded-lg bg-grey-700 border border-grey-400">
-      <div className="flex justify-between md:items-center flex-col md:flex-row gap-3">
+      <div className="flex justify-between md:items-center flex-col md:!flex-row gap-3">
         <div>
           <div className="flex gap-3 items-center">
             <Icon
