@@ -75,7 +75,9 @@ export function SocialProvider(props: SocialProviderProps) {
                 containerClassName="flex-1 md:flex-0"
               />
             )}
-            <Button onClick={() => onConnectClick && onConnectClick(inputValue)}>Connect</Button>
+            <Button color="stroke" onClick={() => onConnectClick && onConnectClick(inputValue)}>
+              Connect
+            </Button>
           </div>
         )}
       </div>
