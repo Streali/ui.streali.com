@@ -41,7 +41,7 @@ export function Switch(props: SwitchProps) {
   };
 
   return (
-    <div className="flex items-center w-full gap-3">
+    <div className="flex items-center gap-3">
       <SwitchPrimitive.Root
         checked={isSwitchChecked}
         disabled={disabled}

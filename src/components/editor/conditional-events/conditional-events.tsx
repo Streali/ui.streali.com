@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Icon, IconSVG } from '../../icon/icon';
-import Select from '../../forms/select/select';
+import { Select } from '../../forms/select/select';
 import { Input } from '../../forms/input/input';
 import { Button } from '../../button/button';
 

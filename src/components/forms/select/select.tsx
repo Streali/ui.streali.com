@@ -30,7 +30,7 @@ interface SelectProps {
   defaultValue?: { label: string; value: string };
 }
 
-export default function Select(props: SelectProps) {
+export function Select(props: SelectProps) {
   const {
     label,
     labelClassName = '',
