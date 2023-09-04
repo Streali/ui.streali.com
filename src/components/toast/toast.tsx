@@ -8,6 +8,7 @@ interface ToastProps {
   type: 'default' | 'success' | 'warning' | 'error';
   title: string;
   message: string;
+  id?: string;
   duration?: number;
   buttons?: {
     title: string;
@@ -19,11 +20,11 @@ interface ToastProps {
 }
 
 export function Toast(props: ToastProps) {
-  const { type, title, message, duration, buttons, icon } = props;
+  const { type, title, message, id = crypto.randomUUID(), duration, buttons, icon } = props;
 
   return (
     <>
-      <Button onClick={() => toastr(type, title, message, duration, buttons, icon)}>
+      <Button onClick={() => toastr(type, title, message, id, duration, buttons, icon)}>
         Display toast
       </Button>
     </>
@@ -34,6 +35,7 @@ export function toastr(
   type: 'default' | 'success' | 'warning' | 'error',
   title: string,
   message: string,
+  id?: string,
   duration?: number,
   buttons?: {
     title: string;
@@ -46,6 +48,7 @@ export function toastr(
   toast(
     <ToastContent type={type} title={title} message={message} buttons={buttons} icon={icon} />,
     {
+      id: id ?? crypto.randomUUID(),
       duration: duration || 5000,
       position: 'top-right',
       className: '!p-0 !bg-transparent !border-0 !rounded-0 !shadow-none !text-white',
