@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "@streali/ui": {
-      "signature": "9756e9c748cd7448154a1ca643cfe1c8",
+      "signature": "e813ed1105a9a8c189a5a9560d61e5fe",
       "file": true
     }
   }

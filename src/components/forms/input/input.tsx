@@ -51,7 +51,7 @@ export const Input = forwardRef((props: InputProps, ref) => {
         {iconLeft && <Icon name={iconLeft} className="-mt-0.5" />}
         <input
           {...rest}
-          className={`placeholder:text-grey-300 font-sans bg-transparent flex-1 h-full outline-none -mt-0.5 appearance-none w-full ${rest.className}`}
+          className={`placeholder:text-grey-300 font-sans bg-transparent flex-1 h-full !outline-none -mt-0.5 appearance-none w-full ${rest.className}`}
           ref={ref as RefObject<HTMLInputElement>}
           onBlur={(e) => {
             rest.onBlur?.(e);
