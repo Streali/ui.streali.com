@@ -39,7 +39,7 @@ export function SocialProvider(props: SocialProviderProps) {
     <div className="w-full p-6 rounded-lg bg-grey-700 border border-grey-400">
       <div className="flex justify-between md:items-center flex-col md:!flex-row gap-3">
         <div>
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center h-9">
             <Icon
               name={icon}
               svg={iconSVG}
@@ -55,7 +55,7 @@ export function SocialProvider(props: SocialProviderProps) {
               className={`${isConnected ? 'text-success-500' : 'text-error-500'}`}
             />
             <Text type="medium" className="block -mt-1">
-              {isConnected ? 'This provider is connected' : 'This provider is not connected'}
+              {isConnected ? 'Connected' : 'Not connected'}
             </Text>
           </div>
         </div>
