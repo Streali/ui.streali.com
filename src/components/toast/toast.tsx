@@ -39,7 +39,7 @@ export function toastr(
   duration?: number,
   buttons?: {
     title: string;
-    onClick: () => void;
+    onClick?: () => void;
     link?: string;
     external?: boolean;
   }[],
@@ -62,7 +62,7 @@ interface ToastContentProps {
   message: string;
   buttons?: {
     title: string;
-    onClick: () => void;
+    onClick?: () => void;
     link?: string;
     external?: boolean;
   }[];
@@ -110,7 +110,9 @@ function ToastContent(props: ToastContentProps) {
                 key={index}
                 type={type}
                 title={button.title}
-                onClick={button.onClick}
+                onClick={() => {
+                  button.onClick && button.onClick;
+                }}
                 link={button.link}
                 external={button.external}
               />

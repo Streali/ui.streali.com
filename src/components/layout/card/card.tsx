@@ -1,4 +1,5 @@
 import { Button } from '../../button/button';
+import { Popover } from '../../popover/popover';
 import { Tooltip } from '../../tooltip/tooltip';
 
 interface CardProps {
@@ -10,24 +11,34 @@ interface CardProps {
     duplicate?: boolean;
     embed?: boolean;
     delete?: boolean;
+    settings?: boolean;
   };
   onEditClick?: () => void;
   onDownloadClick?: () => void;
   onDuplicateClick?: () => void;
   onEmbedClick?: () => void;
   onDeleteClick?: () => void;
+  settingsContent?: React.ReactNode;
 }
 
 export function Card(props: CardProps) {
   const {
     children,
     title,
-    displayButtons = { edit: true, download: true, duplicate: true, embed: true, delete: true },
+    displayButtons = {
+      edit: true,
+      download: true,
+      duplicate: true,
+      embed: true,
+      delete: true,
+      settings: true,
+    },
     onEditClick,
     onDownloadClick,
     onDuplicateClick,
     onEmbedClick,
     onDeleteClick,
+    settingsContent,
   } = props;
 
   return (
@@ -54,6 +65,13 @@ export function Card(props: CardProps) {
           {displayButtons.embed && (
             <Tooltip content="Embed">
               <Button iconLeft="computer-line" color="stroke" onClick={onEmbedClick} />
+            </Tooltip>
+          )}
+          {displayButtons.settings && (
+            <Tooltip content="Settings">
+              <Popover trigger={<Button iconLeft="settings-4-line" color="stroke" />} align="end">
+                {settingsContent && settingsContent}
+              </Popover>
             </Tooltip>
           )}
           {displayButtons.delete && (
