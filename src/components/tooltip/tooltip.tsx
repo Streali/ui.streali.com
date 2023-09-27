@@ -12,7 +12,7 @@ export function Tooltip(props: TooltipProps) {
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root delayDuration={delayDuration}>
-        <TooltipPrimitive.Trigger>{children}</TooltipPrimitive.Trigger>
+        <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
         <TooltipPrimitive.Portal>
           <TooltipPrimitive.Content
             className="bg-black/80 backdrop-blur px-2 py-1 rounded"

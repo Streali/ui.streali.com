@@ -15,7 +15,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'StrealiUI',
-      formats: ['es', 'cjs'],
+      formats: ['es'],
       fileName: (format) => `streali-ui.${format}.js`,
     },
     rollupOptions: {

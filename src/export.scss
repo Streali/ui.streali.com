@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box !important;
+}
+
+body {
+  background-color: theme('colors.grey.500');
+  color: theme('colors.white');
+  font-family: theme('fontFamily.sans');
+  font-size: theme('fontSize.base');
+}
+
+// Inputs
+
+@layer base {
+  input[type='number'].appearance-none::-webkit-inner-spin-button,
+  input[type='number'].appearance-none::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'].appearance-none {
+    -moz-appearance: textfield;
+  }
+}
+
+// Color picker
+.w-color-alpha-fill {
+  width: 8px !important;
+  height: 8px !important;
+  transform: translate(-4px, 0px) !important;
+}
