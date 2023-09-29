@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "@streali/ui": {
-      "signature": "7318ecc7ca2701d69190d8e010cc0c6d",
-      "file": true
-    }
-  }
-}

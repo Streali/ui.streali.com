@@ -60,6 +60,7 @@ export function Popover(props: PopoverProps) {
         <PopoverPrimitive.Anchor />
         <PopoverPrimitive.Portal>
           <PopoverPrimitive.Content
+            collisionPadding={12}
             align={align}
             side={side}
             sideOffset={10}
