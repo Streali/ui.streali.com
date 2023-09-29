@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Popover } from '../popover/popover';
 import { Icon } from '../icon/icon';
 
@@ -52,10 +51,10 @@ function PopoverMenuItem(props: PopoverMenuItemProps) {
 
   if (link && !external) {
     return (
-      <Link to={link} className={defineClassName} onClick={onClick}>
+      <a href={link} className={defineClassName} onClick={onClick}>
         {iconLeft && <Icon name={iconLeft} />}
         {label}
-      </Link>
+      </a>
     );
   }
 
