@@ -1,4 +1,3 @@
-import { Link } from '@inertiajs/react';
 import { Icon, IconSVG } from '../icon/icon';
 import { ComponentPropsWithoutRef, RefObject, forwardRef } from 'react';
 
@@ -89,9 +88,9 @@ export const Button = forwardRef((props: ButtonProps, ref) => {
 
   if (link && !external) {
     return (
-      <Link href={link} className={defineClassName}>
+      <a href={link} className={defineClassName}>
         {content}
-      </Link>
+      </a>
     );
   }
 
