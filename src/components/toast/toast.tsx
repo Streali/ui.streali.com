@@ -2,7 +2,6 @@ import toast, { Toaster } from 'react-hot-toast';
 import { Button } from '../button/button';
 import { Icon } from '../icon/icon';
 import { Text } from '../text/text';
-import { Link } from 'react-router-dom';
 
 interface ToastProps {
   type: 'default' | 'success' | 'warning' | 'error';
@@ -145,9 +144,9 @@ function ToastButton(props: ToastButtonProps) {
   const linkContent = () => {
     if (link && !external) {
       return (
-        <Link to={link} onClick={onClick} className={`text-sm ${typeButtonColor[type]}`}>
+        <a href={link} onClick={onClick} className={`text-sm ${typeButtonColor[type]}`}>
           {title}
-        </Link>
+        </a>
       );
     }
 

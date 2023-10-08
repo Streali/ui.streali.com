@@ -7,11 +7,11 @@ interface ShellProps {
     user: {
       username: string;
       avatarUrl?: string;
-      menu: PopoverMenuItem[];
+      menu?: PopoverMenuItem[];
     };
-    navigation: NavigationItem[];
-    bottomNavigation: NavigationBottomItem[];
-    version: string;
+    navigation?: NavigationItem[];
+    bottomNavigation?: NavigationBottomItem[];
+    version?: string;
     customContent?: React.ReactNode;
   };
   children: React.ReactNode;

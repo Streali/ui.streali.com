@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Avatar } from '../../avatar/avatar';
 import { PopoverMenu, PopoverMenuItem } from '../../popover-menu/popover-menu';
 import { Icon } from '../../icon/icon';
@@ -21,11 +21,11 @@ interface NavigationProps {
   user: {
     username: string;
     avatarUrl?: string;
-    menu: PopoverMenuItem[];
+    menu?: PopoverMenuItem[];
   };
-  navigation: NavigationItem[];
-  bottomNavigation: NavigationBottomItem[];
-  version: string;
+  navigation?: NavigationItem[];
+  bottomNavigation?: NavigationBottomItem[];
+  version?: string;
   customContent?: React.ReactNode;
 }
 
@@ -39,21 +39,18 @@ export function Navigation(props: NavigationProps) {
           {logo}
           <PopoverMenu
             trigger={<Avatar username={user.username} size="24" url={user.avatarUrl} />}
-            menu={user.menu}
+            menu={user.menu ? user.menu : []}
           />
         </div>
         <nav className="p-2 flex flex-col gap-1">
-          {navigation.map((item) => (
-            <NavigationItem key={item.label} {...item} />
-          ))}
+          {navigation && navigation.map((item) => <NavigationItem key={item.label} {...item} />)}
         </nav>
       </div>
       <div className="flex flex-col gap-2">
         {customContent}
         <div className="flex flex-col gap-2 p-4">
-          {bottomNavigation.map((item) => (
-            <NavigationItemBottom key={item.label} {...item} />
-          ))}
+          {bottomNavigation &&
+            bottomNavigation.map((item) => <NavigationItemBottom key={item.label} {...item} />)}
         </div>
         <Text className="block px-4 mb-4" type="little">
           {version}
@@ -66,14 +63,10 @@ export function Navigation(props: NavigationProps) {
 function NavigationItem(props: NavigationItem) {
   const { label, link, icon } = props;
 
-  const location = useLocation();
-
   return (
     <Link
       to={link}
-      className={`h-8 items-center flex gap-3 hover:bg-grey-400 transition-colors duration-200 px-2 rounded ${
-        location.pathname.includes(link) ? 'bg-primary-500 hover:bg-primary-500' : 'bg-transparent'
-      }`}>
+      className={`h-8 items-center flex gap-3 hover:bg-grey-400 transition-colors duration-200 px-2 rounded`}>
       <Icon name={icon} />
       {label}
     </Link>
