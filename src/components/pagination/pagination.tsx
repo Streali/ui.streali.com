@@ -1,5 +1,7 @@
-import { Icon } from '@streali/ui';
+'use client';
+
 import { Fragment } from 'react';
+import { Icon } from '../icon/icon';
 
 interface PaginationProps {
   numberOfPages: number;

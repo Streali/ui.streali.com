@@ -1,3 +1,5 @@
+'use client';
+
 import { PopoverMenuItem } from '../../popover-menu/popover-menu';
 import { Navigation, NavigationBottomItem, NavigationItem } from '../navigation/navigation';
 

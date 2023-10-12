@@ -1,3 +1,5 @@
+'use client';
+
 import { useDropzone, FileRejection } from 'react-dropzone';
 import { Button } from '../../button/button';
 import { Text } from '../../text/text';

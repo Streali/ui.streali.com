@@ -1,3 +1,5 @@
+'use client';
+
 import toast, { Toaster } from 'react-hot-toast';
 import { Button } from '../button/button';
 import { Icon } from '../icon/icon';

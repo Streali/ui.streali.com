@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '../../button/button';
 import { Popover } from '../../popover/popover';
 import { Tooltip } from '../../tooltip/tooltip';

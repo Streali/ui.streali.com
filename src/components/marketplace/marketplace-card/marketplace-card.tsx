@@ -1,3 +1,6 @@
+'use client';
+
+import Link from 'next/link';
 import { Button } from '../../button/button';
 //import { Icon } from '../../icon/icon';
 
@@ -29,7 +32,7 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
   } = props;
 
   return (
-    <a href={link} className={`group ${className}`}>
+    <Link href={link} className={`group ${className}`}>
       <div className="w-full aspect-[4/3] relative overflow-hidden rounded-lg mb-3">
         {/* <button
           onClick={onFavoriteClick}
@@ -70,6 +73,6 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
           {price === 0 ? 'Free' : priceFormatted}
         </h4>
       </div>
-    </a>
+    </Link>
   );
 }

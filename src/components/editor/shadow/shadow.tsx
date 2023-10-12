@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { Input } from '../../forms/input/input';
 import { ColorPicker } from '../color-picker/color-picker';

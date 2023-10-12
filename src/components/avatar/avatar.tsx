@@ -1,3 +1,5 @@
+'use client';
+
 import { Text } from '../text/text';
 
 interface AvatarProps {

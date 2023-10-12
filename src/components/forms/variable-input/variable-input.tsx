@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { MentionsInput, Mention } from 'react-mentions';
 import './variable-input.scss';

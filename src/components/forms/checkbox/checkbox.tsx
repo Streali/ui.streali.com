@@ -1,3 +1,5 @@
+'use client';
+
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { Text } from '../../text/text';
 

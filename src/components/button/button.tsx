@@ -1,3 +1,6 @@
+'use client';
+
+import Link from 'next/link';
 import { Icon, IconSVG } from '../icon/icon';
 import { ComponentPropsWithoutRef, RefObject, forwardRef } from 'react';
 
@@ -88,9 +91,9 @@ export const Button = forwardRef((props: ButtonProps, ref) => {
 
   if (link && !external) {
     return (
-      <a href={link} className={defineClassName}>
+      <Link href={link} className={defineClassName}>
         {content}
-      </a>
+      </Link>
     );
   }
 

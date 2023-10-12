@@ -1,3 +1,5 @@
+'use client';
+
 import { Link } from 'react-router-dom';
 import { Avatar } from '../../avatar/avatar';
 import { PopoverMenu, PopoverMenuItem } from '../../popover-menu/popover-menu';

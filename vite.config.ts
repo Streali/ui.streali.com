@@ -20,7 +20,14 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
+      onwarn(warning, warn) {
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE' && warning.message.includes(`"use client"`)) {
+          return;
+        }
+        warn(warning);
+      },
       output: {
+        banner: '"use client"',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',

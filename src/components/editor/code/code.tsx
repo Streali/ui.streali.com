@@ -1,3 +1,5 @@
+'use client';
+
 import Editor, { useMonaco } from '@monaco-editor/react';
 import { emmetHTML, emmetCSS } from 'emmet-monaco-es';
 import Theme from './theme.json';

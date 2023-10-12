@@ -1,3 +1,5 @@
+'use client';
+
 import { ComponentPropsWithoutRef, RefObject, forwardRef, useState } from 'react';
 import { Text } from '../../text/text';
 import { Icon } from '../../icon/icon';

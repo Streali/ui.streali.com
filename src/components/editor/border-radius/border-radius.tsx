@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { Text } from '../../text/text';
 import { Input } from '../../forms/input/input';
