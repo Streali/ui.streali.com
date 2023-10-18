@@ -14,6 +14,7 @@ export * from './components/tabs/tabs';
 export * from './components/text/text';
 export * from './components/toast/toast';
 export * from './components/tooltip/tooltip';
+export * from './components/pagination/pagination';
 
 export * from './components/chat/chat-demo-toolbar/chat-demo-toolbar';
 export * from './components/chat/chat-message/chat-message';

@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { Icon, IconSVG } from '../icon/icon';
 import { ComponentPropsWithoutRef, RefObject, forwardRef } from 'react';
 
@@ -91,15 +90,20 @@ export const Button = forwardRef((props: ButtonProps, ref) => {
 
   if (link && !external) {
     return (
-      <Link href={link} className={defineClassName}>
+      <a href={link} className={defineClassName} ref={ref as RefObject<HTMLAnchorElement>}>
         {content}
-      </Link>
+      </a>
     );
   }
 
   if (link && external) {
     return (
-      <a href={link} className={defineClassName} target="_blank" rel="noreferrer">
+      <a
+        href={link}
+        className={defineClassName}
+        target="_blank"
+        rel="noreferrer"
+        ref={ref as RefObject<HTMLAnchorElement>}>
         {content}
       </a>
     );

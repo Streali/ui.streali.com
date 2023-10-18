@@ -1,6 +1,4 @@
 'use client';
-
-import Link from 'next/link';
 import { Button } from '../../button/button';
 //import { Icon } from '../../icon/icon';
 
@@ -12,7 +10,7 @@ interface MarketplaceCardProps {
   className?: string;
   //isFavorite: boolean;
   coverUrl: string;
-  link: string;
+  link?: string;
   //onFavoriteClick?: () => void;
   onDemoClick?: () => void;
 }
@@ -32,7 +30,7 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
   } = props;
 
   return (
-    <Link href={link} className={`group ${className}`}>
+    <div className={`group ${className}`}>
       <div className="w-full aspect-[4/3] relative overflow-hidden rounded-lg mb-3">
         {/* <button
           onClick={onFavoriteClick}
@@ -52,7 +50,7 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
           {children}
         </div>
         <div className="absolute flex gap-3 z-10 -bottom-20 left-2 w-[calc(100%_-_16px)] p-2 bg-grey-700 rounded-lg group-hover:bottom-2 transition-all duration-300">
-          <Button
+          {/* <Button
             iconLeft="play-fill"
             color="stroke"
             className="flex-1"
@@ -61,7 +59,7 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
               onDemoClick && onDemoClick();
             }}>
             Try
-          </Button>
+          </Button> */}
           <Button className="flex-1" iconLeft={price === 0 ? 'add-fill' : 'shopping-cart-2-fill'}>
             {price === 0 ? 'Use it' : 'Buy'}
           </Button>
@@ -73,6 +71,6 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
           {price === 0 ? 'Free' : priceFormatted}
         </h4>
       </div>
-    </Link>
+    </div>
   );
 }
