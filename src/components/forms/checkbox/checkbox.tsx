@@ -10,15 +10,17 @@ interface CheckboxProps {
   onChange?: (checked: boolean | 'indeterminate') => void;
   containerClassName?: string;
   errorMessage?: string;
+  name?: string;
 }
 
 export function Checkbox(props: CheckboxProps) {
-  const { label, value, checked, onChange, containerClassName, errorMessage } = props;
+  const { label, value, checked, onChange, containerClassName, errorMessage, name } = props;
 
   return (
     <div className={containerClassName}>
       <div className={`flex items-center gap-3`}>
         <CheckboxPrimitive.Root
+          name={name}
           defaultChecked={checked}
           id={value}
           value={value}
