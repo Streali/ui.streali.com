@@ -1,5 +1,3 @@
-'use client';
-
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import { Text } from '../../text/text';
 

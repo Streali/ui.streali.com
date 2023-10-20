@@ -1,5 +1,3 @@
-'use client';
-
 import { Icon } from '../../icon/icon';
 import { Code } from '../code/code';
 import { PanelGroup, Panel, PanelResizeHandle } from 'react-resizable-panels';

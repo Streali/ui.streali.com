@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 import { Button } from '../button/button';
 import { Text } from '../text/text';
@@ -19,7 +17,7 @@ const typeColor = {
 
 export function InformationBar(props: InformationBarProps) {
   const { text, type = 'info', id, displayOneTime = false } = props;
-  const [display, setDisplay] = useState(true);
+  const [display, setDisplay] = useState(false);
 
   const handleClose = () => {
     setDisplay(false);
@@ -30,12 +28,16 @@ export function InformationBar(props: InformationBarProps) {
 
   useEffect(() => {
     if (displayOneTime) {
-      const isDisplayed = sessionStorage.getItem(id);
-      if (isDisplayed) {
+      const isDisplayed = localStorage.getItem(id);
+      if (isDisplayed === 'true') {
         setDisplay(false);
+      } else {
+        setDisplay(true);
       }
+    } else {
+      setDisplay(true);
     }
-  }, []);
+  }, [displayOneTime, id]);
 
   return (
     <>
@@ -43,7 +45,9 @@ export function InformationBar(props: InformationBarProps) {
         <div className={`w-full h-12 fixed top-0 left-0 flex px-3 z-[999] ${typeColor[type]}`}>
           <div className="flex-1"></div>
           <div className="flex-1 flex justify-center items-center">
-            <Text type="h4">{text}</Text>
+            <Text type="h4" className="text-center">
+              {text}
+            </Text>
           </div>
           <div className="flex-1 flex justify-end items-center">
             <Button iconLeft="close-line" color="transparent" onClick={handleClose} />

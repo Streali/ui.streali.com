@@ -1,5 +1,3 @@
-'use client';
-
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
 import { Icon } from '../../icon/icon';
 import { useState } from 'react';

@@ -1,5 +1,3 @@
-'use client';
-
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 import { Text } from '../../text/text';
 import { useState } from 'react';

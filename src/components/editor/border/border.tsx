@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { Select } from '../../forms/select/select';
 import { ColorPicker } from '../color-picker/color-picker';

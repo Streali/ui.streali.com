@@ -1,5 +1,3 @@
-'use client';
-
 import { Icon, IconSVG } from '../../icon/icon';
 
 export type Tool = {

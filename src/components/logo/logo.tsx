@@ -1,5 +1,3 @@
-'use client';
-
 interface LogoProps {
   className?: string;
   width?: number;

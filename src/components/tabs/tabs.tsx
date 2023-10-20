@@ -1,5 +1,3 @@
-'use client';
-
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { Button } from '../button/button';
 import { useEffect, useState } from 'react';

@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useRef, useState } from 'react';
 import { Input } from '../../forms/input/input';
 import * as Portal from '@radix-ui/react-portal';

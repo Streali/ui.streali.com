@@ -1,5 +1,3 @@
-'use client';
-
 interface TextProps {
   children: React.ReactNode;
   type?: 'content' | 'little' | 'medium' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

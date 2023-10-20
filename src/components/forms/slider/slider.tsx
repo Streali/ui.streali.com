@@ -1,5 +1,3 @@
-'use client';
-
 import * as SliderPrimitive from '@radix-ui/react-slider';
 import { Text } from '../../text/text';
 import { Input } from '../input/input';

@@ -1,5 +1,3 @@
-'use client';
-
 import IconAllBorder from './svg/icon-all-border';
 import IconBorderBottom from './svg/icon-border-bottom';
 import IconBorderLeft from './svg/icon-border-left';

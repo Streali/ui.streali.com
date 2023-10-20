@@ -1,5 +1,3 @@
-'use client';
-
 import { useRef, useState } from 'react';
 import { Button } from '../../button/button';
 import { Switch } from '../../forms/switch/switch';

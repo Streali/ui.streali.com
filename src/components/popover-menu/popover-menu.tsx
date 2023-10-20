@@ -1,5 +1,3 @@
-'use client';
-
 import { Popover } from '../popover/popover';
 import { Icon } from '../icon/icon';
 

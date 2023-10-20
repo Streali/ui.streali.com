@@ -1,5 +1,3 @@
-'use client';
-
 interface BadgeProps {
   type: 'primary' | 'secondary' | 'success' | 'error' | 'warning';
   text: string;

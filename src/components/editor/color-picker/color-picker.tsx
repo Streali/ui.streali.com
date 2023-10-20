@@ -1,5 +1,3 @@
-'use client';
-
 import { RefObject, forwardRef, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Input } from '../../forms/input/input';
 import { Alpha, EditableInputHSLA, EditableInputRGBA, Hue, Saturation } from '@uiw/react-color';

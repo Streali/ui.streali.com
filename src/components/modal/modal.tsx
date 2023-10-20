@@ -1,5 +1,3 @@
-'use client';
-
 import * as Dialog from '@radix-ui/react-dialog';
 import { Text } from '../text/text';
 import { Button } from '../button/button';

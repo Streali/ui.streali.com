@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { Icon, IconSVG } from '../../icon/icon';
 import { Text } from '../../text/text';

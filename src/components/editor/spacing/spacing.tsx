@@ -1,5 +1,3 @@
-'use client';
-
 import { Text } from '../../text/text';
 
 export type SpacingType = {
