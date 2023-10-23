@@ -1,6 +1,7 @@
 {
   "name": "@streali/ui",
   "version": "1.0.0",
+  "description": "UI library component for Streali.com",
   "type": "module",
   "files": [
     "dist"
@@ -83,9 +84,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Streali/UI.git"
-  },
-  "publishConfig": {
-    "access": "restricted"
+    "url": "https://github.com/Streali/ui.streali.com"
   }
 }
