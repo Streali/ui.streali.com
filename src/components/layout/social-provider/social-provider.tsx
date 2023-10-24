@@ -64,7 +64,6 @@ export function SocialProvider(props: SocialProviderProps) {
             <div className="inline-flex h-10 px-3 bg-white text-black rounded items-center">
               {isConnectedContent}
             </div>
-            <Button color="stroke" iconLeft="logout-box-r-line" />
           </div>
         ) : (
           <div className="flex gap-1">
