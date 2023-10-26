@@ -42,7 +42,7 @@ interface PopoverMenuItemProps {
   iconLeft?: string;
 }
 
-function PopoverMenuItem(props: PopoverMenuItemProps) {
+export function PopoverMenuItem(props: PopoverMenuItemProps) {
   const { label, onClick, link, external, disabled, className = '', iconLeft } = props;
 
   const defineClassName = `w-full h-9 flex items-center gap-2 px-3 bg-grey-700 border border-grey-400 rounded hover:bg-primary-500 transition-colors duration-200 ${
