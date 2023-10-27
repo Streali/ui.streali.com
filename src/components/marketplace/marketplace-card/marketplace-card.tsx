@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from '../../button/button';
 //import { Icon } from '../../icon/icon';
 
@@ -28,8 +29,13 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
     onDemoClick,
   } = props;
 
+  const [isHover, setIsHover] = useState(false);
+
   return (
-    <div className={`group ${className}`}>
+    <div
+      className={`group ${className}`}
+      onMouseOver={() => setIsHover(true)}
+      onMouseOut={() => setIsHover(false)}>
       <div className="w-full aspect-[4/3] relative overflow-hidden rounded-lg mb-3">
         {/* <button
           onClick={onFavoriteClick}
@@ -46,7 +52,7 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
           className="object-cover group-hover:opacity-0 transition-opacity duration-150"
         />
         <div className="absolute top-0 left-0 bg-grey-900 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-150">
-          {children}
+          {isHover && children}
         </div>
         <div className="absolute flex gap-3 z-10 -bottom-20 left-2 w-[calc(100%_-_16px)] p-2 bg-grey-700 rounded-lg group-hover:bottom-2 transition-all duration-300">
           {/* <Button
