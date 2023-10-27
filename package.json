@@ -1,6 +1,6 @@
 {
   "name": "@streali/ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "UI library component for Streali.com",
   "type": "module",
   "files": [
@@ -18,7 +18,7 @@
     "build-storybook": "storybook build",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "local-publish": "npm run build-only && yalc push",
-    "publish": "npm run build-only && npm publish"
+    "push": "npm run build-only && npm publish"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.2.0",
