@@ -5,7 +5,6 @@ import { hexToHsva, hsvaToHex, hsvaToHexa } from '@uiw/color-convert';
 import EditableInput from '@uiw/react-color-editable-input';
 import './color-picker.scss';
 import { Icon } from '../../icon/icon';
-import { Portal } from '@radix-ui/react-portal';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Text } from '../../text/text';
 
@@ -81,7 +80,7 @@ export function ColorPicker(props: ColorPickerProps) {
   }, [value]);
 
   return (
-    <div className={`relative w-full ${containerClassName}`}>
+    <div className={`relative ${containerClassName}`}>
       {label && (
         <Text className={`mb-2 block w-full ${labelClassName}`} type="medium">
           {label}
@@ -99,7 +98,6 @@ export function ColorPicker(props: ColorPickerProps) {
         {haveInput && (
           <Input
             value={val}
-            containerClassName="w-full"
             onChange={(e) => {
               handleInputChange(e.target.value);
             }}
