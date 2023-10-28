@@ -81,7 +81,7 @@ export function ColorPicker(props: ColorPickerProps) {
   }, [value]);
 
   return (
-    <div className={`relative ${containerClassName}`}>
+    <div className={`relative w-full ${containerClassName}`}>
       {label && (
         <Text className={`mb-2 block w-full ${labelClassName}`} type="medium">
           {label}
@@ -99,6 +99,7 @@ export function ColorPicker(props: ColorPickerProps) {
         {haveInput && (
           <Input
             value={val}
+            containerClassName="w-full"
             onChange={(e) => {
               handleInputChange(e.target.value);
             }}
@@ -110,18 +111,16 @@ export function ColorPicker(props: ColorPickerProps) {
           {errorMessage}
         </Text>
       )}
-      <Portal container={document.body}>
-        <AnimatePresence>
-          {isPickerOpen && (
-            <Picker
-              hsva={hsva}
-              onHsva={handleHSVAChange}
-              onOverlayClick={() => setIsPickerOpen(false)}
-              side={side}
-            />
-          )}
-        </AnimatePresence>
-      </Portal>
+      <AnimatePresence>
+        {isPickerOpen && (
+          <Picker
+            hsva={hsva}
+            onHsva={handleHSVAChange}
+            onOverlayClick={() => setIsPickerOpen(false)}
+            side={side}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
