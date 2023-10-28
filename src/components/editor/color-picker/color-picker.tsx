@@ -110,7 +110,7 @@ export function ColorPicker(props: ColorPickerProps) {
           {errorMessage}
         </Text>
       )}
-      <Portal>
+      <Portal container={document.body}>
         <AnimatePresence>
           {isPickerOpen && (
             <Picker
