@@ -110,16 +110,18 @@ export function ColorPicker(props: ColorPickerProps) {
           {errorMessage}
         </Text>
       )}
-      <AnimatePresence>
-        {isPickerOpen && (
-          <Picker
-            hsva={hsva}
-            onHsva={handleHSVAChange}
-            onOverlayClick={() => setIsPickerOpen(false)}
-            side={side}
-          />
-        )}
-      </AnimatePresence>
+      <Portal>
+        <AnimatePresence>
+          {isPickerOpen && (
+            <Picker
+              hsva={hsva}
+              onHsva={handleHSVAChange}
+              onOverlayClick={() => setIsPickerOpen(false)}
+              side={side}
+            />
+          )}
+        </AnimatePresence>
+      </Portal>
     </div>
   );
 }

@@ -13,7 +13,6 @@ export const Default: Story = {
   args: {
     value: '#ffffff',
     haveInput: true,
-    errorMessage: 'Error message',
     label: 'Color',
   },
 };
