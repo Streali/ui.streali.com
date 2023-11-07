@@ -20,7 +20,7 @@ export function Accordion(props: AccordionProps) {
       {items.map((item, index) => (
         <AccordionPrimitive.Item key={index} value={index.toString()} className="mb-3">
           <AccordionPrimitive.Header>
-            <AccordionPrimitive.Trigger className="w-full h-10 bg-grey-600 border border-grey-400 rounded flex items-center px-3 justify-between group transition-colors duration-200 data-[state=open]:border-primary-500">
+            <AccordionPrimitive.Trigger className="w-full h-10 bg-grey-600 border border-grey-400 rounded flex text-left items-center px-3 justify-between group transition-colors duration-200 data-[state=open]:border-primary-500">
               <Text>{item.title}</Text>
               <Icon
                 name="arrow-down-s-line"

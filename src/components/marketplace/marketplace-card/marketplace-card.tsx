@@ -13,6 +13,8 @@ interface MarketplaceCardProps {
   link?: string;
   //onFavoriteClick?: () => void;
   onDemoClick?: () => void;
+  isOwned?: boolean;
+  isOwnedLabel?: string;
 }
 
 export function MarketplaceCard(props: MarketplaceCardProps) {
@@ -26,6 +28,8 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
     link,
     coverUrl,
     //onFavoriteClick,
+    isOwned,
+    isOwnedLabel,
     onDemoClick,
   } = props;
 
@@ -46,6 +50,11 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
           }`}>
           <Icon name="heart-fill" />
         </button> */}
+        {isOwned && (
+          <span className="bg-secondary-500 absolute right-2 top-2 text-black py-2 px-3 rounded font-semibold">
+            {isOwnedLabel}
+          </span>
+        )}
         <img
           src={coverUrl}
           alt={title}
