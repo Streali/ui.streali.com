@@ -10,7 +10,7 @@ interface SocialProviderProps {
   iconWidth?: number;
   iconHeight?: number;
   iconClassName?: string;
-  provider: 'twitch' | 'kick';
+  provider: 'twitch' | 'kick' | 'spotify';
   isConnected?: boolean;
   isConnectedContent?: string;
   onConnectClick?: (value?: string) => void;
