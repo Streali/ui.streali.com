@@ -55,7 +55,9 @@ export function Modal(props: ModalProps) {
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
-      <Dialog.Trigger onClick={() => setIsOpen(true)}>{trigger}</Dialog.Trigger>
+      <Dialog.Trigger asChild onClick={() => setIsOpen(true)}>
+        {trigger}
+      </Dialog.Trigger>
       <Dialog.Portal>
         <AnimatePresence>
           <Dialog.Overlay
