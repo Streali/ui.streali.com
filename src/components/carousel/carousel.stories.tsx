@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Carousel } from './carousel';
+import { Carousel, Slide } from './carousel';
 
 const meta: Meta<typeof Carousel> = {
   title: 'Carousel',
@@ -16,6 +16,12 @@ export const Default: Story = {
       spaceBetween: 10,
       loop: true,
     },
-    slides: [<p>Slide 1</p>, <p>Slide 2</p>],
+    children: (
+      <>
+        <Slide>Slide 1</Slide>
+        <Slide>Slide 2</Slide>
+        <Slide>Slide 3</Slide>
+      </>
+    ),
   },
 };

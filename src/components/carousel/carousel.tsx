@@ -4,17 +4,15 @@ import { SwiperOptions } from 'swiper/types';
 
 type Props = {
   options: SwiperOptions;
-  slides: React.ReactNode[];
+  children: React.ReactNode;
 };
 
 export function Carousel(props: Props) {
-  const { options, slides } = props;
+  const { options, children } = props;
 
-  return (
-    <Swiper {...options}>
-      {slides.map((slide, index) => (
-        <SwiperSlide key={(slide ? slide.toString() : 'slide') + index}>{slide}</SwiperSlide>
-      ))}
-    </Swiper>
-  );
+  return <Swiper {...options}>{children}</Swiper>;
+}
+
+export function Slide(props: { children: React.ReactNode }) {
+  return <SwiperSlide>{props.children}</SwiperSlide>;
 }
