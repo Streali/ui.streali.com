@@ -1,6 +1,6 @@
 {
   "name": "@streali/ui",
-  "version": "1.0.15",
+  "version": "1.1.0",
   "description": "UI library component for Streali.com",
   "type": "module",
   "files": [
@@ -34,7 +34,6 @@
     "@radix-ui/react-switch": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.6",
-    "@remix-run/react": "^2.0.1",
     "@streali/ui": "file:.yalc/@streali/ui",
     "@uiw/color-convert": "^1.2.1",
     "@uiw/react-color": "^1.2.1",
@@ -53,7 +52,7 @@
     "react-select": "^5.7.2",
     "remixicon": "^3.1.1",
     "sass": "^1.62.0",
-    "swiper": "^10.2.0",
+    "swiper": "^11.0.5",
     "vite-plugin-dts": "^3.5.2"
   },
   "devDependencies": {
