@@ -2,15 +2,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { SwiperOptions } from 'swiper/types';
 
-type Props = {
-  options: SwiperOptions;
+interface Props extends SwiperOptions {
   children: React.ReactNode;
-};
+  className?: string;
+}
 
 export function Carousel(props: Props) {
-  const { options, children } = props;
+  const { children, className = '', ...rest } = props;
 
-  return <Swiper {...options}>{children}</Swiper>;
+  return (
+    <Swiper className={className} {...rest}>
+      {children}
+    </Swiper>
+  );
 }
 
 export function Slide(props: { children: React.ReactNode }) {
