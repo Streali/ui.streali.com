@@ -61,10 +61,10 @@ export function Modal(props: ModalProps) {
       <Dialog.Portal>
         <AnimatePresence>
           <Dialog.Overlay
-            className="w-screen h-screen bg-black/60 fixed top-0 left-0 backdrop-blur"
+            className="w-screen h-screen bg-black/60 fixed top-0 left-0 backdrop-blur z-[990]"
             onClick={() => setIsOpen(false)}
           />
-          <Dialog.Content className="fixed top-1/2 left-1/2 !-translate-x-1/2 !-translate-y-1/2 w-[calc(100vw_-_48px)] lg:w-3/5">
+          <Dialog.Content className="fixed top-1/2 left-1/2 !-translate-x-1/2 !-translate-y-1/2 w-[calc(100vw_-_48px)] lg:w-3/5 z-[999]">
             <motion.div
               variants={modalAnimation}
               initial="initial"
