@@ -53,6 +53,7 @@ export * from './components/layout/navigation/navigation';
 export * from './components/layout/shell/shell';
 export * from './components/layout/title-rotate/title-rotate';
 export * from './components/layout/social-provider/social-provider';
+export * from './components/layout/social-provider-list/social-provider-list';
 
 export * from './components/marketplace/marketplace-card/marketplace-card';
 
