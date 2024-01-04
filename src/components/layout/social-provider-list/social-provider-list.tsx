@@ -12,6 +12,9 @@ interface Provider {
   modal?: {
     title: string;
     content: React.ReactNode;
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
+    buttons?: React.ReactNode;
   };
 }
 
@@ -49,7 +52,11 @@ export function SocialProviderList(props: Props) {
               {provider.modal ? (
                 <ProviderModal {...provider} />
               ) : (
-                <a href={provider.link} className={triggerClassName}>
+                <a
+                  href={provider.link}
+                  className={triggerClassName}
+                  target="_blank"
+                  rel="noreferrer noopener">
                   <Icon name={provider.icon} className={provider.iconClassName} />
                 </a>
               )}
@@ -61,11 +68,14 @@ export function SocialProviderList(props: Props) {
 }
 
 function ProviderModal(props: Provider) {
-  const { name, icon, iconClassName, modal } = props;
+  const { icon, iconClassName, modal } = props;
 
   return (
     <Modal
       title={modal?.title || ''}
+      buttons={modal?.buttons}
+      open={modal?.open}
+      onOpenChange={modal?.onOpenChange}
       trigger={
         <button className={triggerClassName}>
           <Icon name={icon} className={iconClassName} />
