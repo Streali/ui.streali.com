@@ -11,6 +11,7 @@ interface ModalProps {
   title: string;
   onOpenChange?: (open: boolean) => void;
   open?: boolean;
+  contentClassName?: string;
 }
 
 const modalAnimation = {
@@ -46,7 +47,7 @@ const modalAnimation = {
 };
 
 export function Modal(props: ModalProps) {
-  const { children, trigger, title, buttons, onOpenChange, open } = props;
+  const { children, trigger, title, buttons, onOpenChange, open, contentClassName } = props;
   const [isOpen, setIsOpen] = useState(open);
 
   useEffect(() => {
@@ -70,7 +71,7 @@ export function Modal(props: ModalProps) {
               initial="initial"
               animate="in"
               exit="out"
-              className="w-full p-10 bg-grey-700 border border-grey-400 rounded-lg !translate-x-0 !translate-y-0">
+              className={`w-full p-10 bg-grey-700 border border-grey-400 rounded-lg !translate-x-0 !translate-y-0 ${contentClassName}`}>
               <div className="flex justify-between items-center mb-5">
                 <Dialog.Title>
                   <Text type="h1">{title}</Text>
