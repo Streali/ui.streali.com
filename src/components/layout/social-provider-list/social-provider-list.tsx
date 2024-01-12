@@ -15,6 +15,7 @@ interface Provider {
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
     buttons?: React.ReactNode;
+    className?: string;
   };
 }
 
@@ -76,6 +77,7 @@ function ProviderModal(props: Provider) {
       buttons={modal?.buttons}
       open={modal?.open}
       onOpenChange={modal?.onOpenChange}
+      contentClassName={modal?.className}
       trigger={
         <button className={triggerClassName}>
           <Icon name={icon} className={iconClassName} />
