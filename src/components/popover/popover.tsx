@@ -1,5 +1,6 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const popoverAnimation = {
   initial: {
@@ -55,9 +56,20 @@ export function Popover(props: PopoverProps) {
     onOpenChange,
   } = props;
 
+  const [isOpen, setIsOpen] = useState(open);
+
+  const handleOpenChange = (open: boolean) => {
+    onOpenChange && onOpenChange(open);
+    setIsOpen(open);
+  };
+
+  useEffect(() => {
+    setIsOpen(open);
+  }, [open]);
+
   return (
     <AnimatePresence>
-      <PopoverPrimitive.Root open={open} onOpenChange={onOpenChange}>
+      <PopoverPrimitive.Root open={isOpen} onOpenChange={handleOpenChange}>
         <PopoverPrimitive.Trigger className={`w-auto ${triggerClassName}`}>
           {trigger}
         </PopoverPrimitive.Trigger>
