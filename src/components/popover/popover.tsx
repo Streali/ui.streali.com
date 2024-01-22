@@ -38,6 +38,8 @@ interface PopoverProps {
   triggerClassName?: string;
   contentClassName?: string;
   className?: string;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
 export function Popover(props: PopoverProps) {
@@ -49,11 +51,13 @@ export function Popover(props: PopoverProps) {
     triggerClassName = '',
     className = '',
     contentClassName = '',
+    open = false,
+    onOpenChange,
   } = props;
 
   return (
     <AnimatePresence>
-      <PopoverPrimitive.Root>
+      <PopoverPrimitive.Root open={open} onOpenChange={onOpenChange}>
         <PopoverPrimitive.Trigger className={`w-auto ${triggerClassName}`}>
           {trigger}
         </PopoverPrimitive.Trigger>

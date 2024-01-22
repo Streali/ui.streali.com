@@ -22,20 +22,32 @@ interface ElementPickerProps {
 export function ElementPicker(props: ElementPickerProps) {
   const { defaultValue, elements, onElementClick, label, labelClassName } = props;
   const [value, setValue] = useState<Element | undefined>(defaultValue);
+  const [popoverOpen, setPopoverOpen] = useState(false);
 
   const handleElementClick = (element: Element) => {
     setValue(element);
     onElementClick && onElementClick(element);
+    setPopoverOpen(false);
   };
 
   return (
     <>
+      <style>
+        {`
+          [data-radix-popper-content-wrapper] {
+            z-index: 999!important;
+          }
+        `}
+      </style>
       {label && (
         <Text className={`mb-2 block w-full ${labelClassName}`} type="medium">
           {label}
         </Text>
       )}
-      <Popover trigger={<ElementTrigger element={value} />}>
+      <Popover
+        trigger={<ElementTrigger element={value} />}
+        open={popoverOpen}
+        onOpenChange={setPopoverOpen}>
         <div className="grid grid-cols-2 gap-3">
           {elements.map((element) => (
             <div
