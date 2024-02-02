@@ -27,7 +27,7 @@ export function VariableInput(props: VariableTextareaProps) {
   const handleChange = (event: any, newValue: string, newPlainTextValue: string, mentions: any) => {
     setValue(newValue);
     if (onChange) {
-      onChange(newPlainTextValue);
+      onChange(newValue);
     }
   };
 
