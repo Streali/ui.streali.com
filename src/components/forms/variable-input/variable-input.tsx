@@ -26,7 +26,9 @@ export function VariableInput(props: VariableTextareaProps) {
 
   const handleChange = (event: any, newValue: string, newPlainTextValue: string, mentions: any) => {
     setValue(newValue);
-    console.log(mentions, newValue);
+    if (onChange) {
+      onChange(newPlainTextValue);
+    }
   };
 
   const inputContainerClassName = `w-full cursor-text rounded bg-grey-600 text-white !min-h-[40px] py-[7px] px-4 transition border ${
