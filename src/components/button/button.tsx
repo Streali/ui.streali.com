@@ -1,5 +1,6 @@
 import { Icon, IconSVG } from '../icon/icon';
 import { ComponentPropsWithoutRef, RefObject, forwardRef } from 'react';
+import { Link } from '@inertiajs/react';
 
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   children?: React.ReactNode;
@@ -88,9 +89,9 @@ export const Button = forwardRef((props: ButtonProps, ref) => {
 
   if (link && !external) {
     return (
-      <a href={link} className={defineClassName} ref={ref as RefObject<HTMLAnchorElement>}>
+      <Link href={link} className={defineClassName} ref={ref as RefObject<HTMLAnchorElement>}>
         {content}
-      </a>
+      </Link>
     );
   }
 
