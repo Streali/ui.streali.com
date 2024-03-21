@@ -17,6 +17,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
+    "prepublishOnly": "npm run build-only",
     "local-publish": "npm run build-only && yalc push",
     "push": "npm run build-only && npm publish"
   },
