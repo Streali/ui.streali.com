@@ -59,6 +59,7 @@ export function MarketplaceCard(props: MarketplaceCardProps) {
           src={coverUrl}
           alt={title}
           className="object-cover group-hover:opacity-0 transition-opacity duration-150"
+          loading="lazy"
         />
         <div className="absolute top-0 left-0 bg-grey-900 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-150">
           {isHover && children}
