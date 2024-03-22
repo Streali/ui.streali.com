@@ -1,6 +1,6 @@
 {
   "name": "@streali/ui",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "UI library component for Streali.com",
   "type": "module",
   "files": [
