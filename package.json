@@ -50,8 +50,7 @@
     "remixicon": "^3.7.0",
     "sass": "^1.72.0",
     "swiper": "^11.0.7",
-    "vite-plugin-dts": "^3.7.3",
-    "@inertiajs/react": "^1.0.15"
+    "vite-plugin-dts": "^3.7.3"
   },
   "devDependencies": {
     "@inertiajs/react": "^1.0.15",
